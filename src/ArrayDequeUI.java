@@ -50,15 +50,35 @@ public class ArrayDequeUI extends javax.swing.JFrame {
 
                 btnOffer.setFont(new java.awt.Font("Mongolian Baiti", 1, 12)); // NOI18N
                 btnOffer.setText("Offer");
+                btnOffer.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnOfferActionPerformed(evt);
+                        }
+                });
 
                 btnPoll.setFont(new java.awt.Font("Mongolian Baiti", 1, 12)); // NOI18N
                 btnPoll.setText("Poll");
+                btnPoll.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnPollActionPerformed(evt);
+                        }
+                });
 
                 btnPeek.setFont(new java.awt.Font("Mongolian Baiti", 1, 12)); // NOI18N
                 btnPeek.setText("Peek");
+                btnPeek.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnPeekActionPerformed(evt);
+                        }
+                });
 
                 btnClear.setFont(new java.awt.Font("Mongolian Baiti", 1, 12)); // NOI18N
                 btnClear.setText("Clear");
+                btnClear.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnClearActionPerformed(evt);
+                        }
+                });
 
                 txtArea.setColumns(20);
                 txtArea.setRows(5);
@@ -127,6 +147,22 @@ public class ArrayDequeUI extends javax.swing.JFrame {
         private void txtInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtInputActionPerformed
                 // TODO add your handling code here:
         }//GEN-LAST:event_txtInputActionPerformed
+
+        private void btnOfferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOfferActionPerformed
+                // TODO add your handling code here:
+        }//GEN-LAST:event_btnOfferActionPerformed
+
+        private void btnPollActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPollActionPerformed
+                // TODO add your handling code here:
+        }//GEN-LAST:event_btnPollActionPerformed
+
+        private void btnPeekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPeekActionPerformed
+                // TODO add your handling code here:
+        }//GEN-LAST:event_btnPeekActionPerformed
+
+        private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
+                // TODO add your handling code here:
+        }//GEN-LAST:event_btnClearActionPerformed
 
         /**
          * @param args the command line arguments
