@@ -124,7 +124,6 @@ public class ArrayDequeUI1 extends javax.swing.JFrame {
             logger.log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
         java.awt.EventQueue.invokeLater(() -> new ArrayDequeUI1().setVisible(true));
     }
 
