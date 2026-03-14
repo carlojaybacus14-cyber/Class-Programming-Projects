@@ -27,8 +27,6 @@ public class CircularLinkedListUI extends javax.swing.JFrame {
                 jScrollPane2 = new javax.swing.JScrollPane();
                 jTextArea2 = new javax.swing.JTextArea();
                 jLabel3 = new javax.swing.JLabel();
-                jButton1 = new javax.swing.JButton();
-                jButton3 = new javax.swing.JButton();
 
                 setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,27 +47,20 @@ public class CircularLinkedListUI extends javax.swing.JFrame {
                 jButton5.setForeground(new java.awt.Color(255, 255, 255));
                 jButton5.setText("Traverse");
 
+                jTextField1.setBackground(new java.awt.Color(20, 20, 20));
                 jTextField1.setForeground(new java.awt.Color(0, 255, 120));
 
-                jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+                jLabel2.setForeground(new java.awt.Color(0, 153, 76));
                 jLabel2.setText("Input Number");
 
-                jTextArea2.setBackground(new java.awt.Color(0, 0, 0));
+                jTextArea2.setBackground(new java.awt.Color(20, 20, 20));
                 jTextArea2.setColumns(20);
                 jTextArea2.setForeground(new java.awt.Color(0, 255, 120));
                 jTextArea2.setRows(5);
                 jScrollPane2.setViewportView(jTextArea2);
 
-                jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+                jLabel3.setForeground(new java.awt.Color(0, 153, 76));
                 jLabel3.setText("Output");
-
-                jButton1.setBackground(new java.awt.Color(0, 153, 76));
-                jButton1.setForeground(new java.awt.Color(255, 255, 255));
-                jButton1.setText("Traverse");
-
-                jButton3.setBackground(new java.awt.Color(0, 153, 76));
-                jButton3.setForeground(new java.awt.Color(255, 255, 255));
-                jButton3.setText("Length");
 
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
                 getContentPane().setLayout(layout);
@@ -90,16 +81,9 @@ public class CircularLinkedListUI extends javax.swing.JFrame {
                                                                         .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                                         .addGroup(layout.createSequentialGroup()
-                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                        .addGroup(layout.createSequentialGroup()
-                                                                                .addGap(18, 18, 18)
-                                                                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addGap(18, 18, 18)
+                                                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                                         .addComponent(jScrollPane2)
@@ -125,11 +109,7 @@ public class CircularLinkedListUI extends javax.swing.JFrame {
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addComponent(jButton4)
                                                         .addComponent(jButton2))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(23, 23, 23)
+                                                .addGap(63, 63, 63)
                                                 .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE))
                                         .addComponent(jScrollPane2))
                                 .addGap(30, 30, 30))
@@ -160,9 +140,7 @@ public class CircularLinkedListUI extends javax.swing.JFrame {
     }
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
-        private javax.swing.JButton jButton1;
         private javax.swing.JButton jButton2;
-        private javax.swing.JButton jButton3;
         private javax.swing.JButton jButton4;
         private javax.swing.JButton jButton5;
         private javax.swing.JLabel jLabel1;

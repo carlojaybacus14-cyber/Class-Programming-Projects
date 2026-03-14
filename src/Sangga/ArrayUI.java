@@ -61,19 +61,21 @@ public class ArrayUI extends javax.swing.JFrame {
                 jButton5.setForeground(new java.awt.Color(255, 255, 255));
                 jButton5.setText("Display");
 
-                jTextField1.setBackground(new java.awt.Color(45, 45, 45));
+                jTextField1.setBackground(new java.awt.Color(20, 20, 20));
                 jTextField1.setForeground(new java.awt.Color(0, 255, 120));
 
-                jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+                jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+                jLabel2.setForeground(new java.awt.Color(0, 153, 76));
                 jLabel2.setText("Input Number");
 
-                jTextArea2.setBackground(new java.awt.Color(0, 0, 0));
+                jTextArea2.setBackground(new java.awt.Color(20, 20, 20));
                 jTextArea2.setColumns(20);
                 jTextArea2.setForeground(new java.awt.Color(0, 255, 120));
                 jTextArea2.setRows(5);
                 jScrollPane2.setViewportView(jTextArea2);
 
-                jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+                jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+                jLabel3.setForeground(new java.awt.Color(0, 153, 76));
                 jLabel3.setText("Output");
 
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
