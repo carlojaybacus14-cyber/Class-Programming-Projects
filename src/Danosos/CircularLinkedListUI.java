@@ -3,29 +3,50 @@ package Danosos;
 import java.awt.*;
 import javax.swing.JOptionPane;
 
+/**
+ * CircularLinkedListUI is a Java Swing GUI application that provides
+ * a visual interface for interacting with a Circular Linked List.
+ * Users can insert nodes, delete nodes, traverse the list, and check
+ * its length through the provided buttons.
+ */
 public class CircularLinkedListUI extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CircularLinkedListUI.class.getName());
     
+    // The underlying circular linked list data structure that this UI interacts with
     private final CircularLinkedList circularList;
+    
+    // Accumulates all output messages (insertions, deletions, traversals, etc.)
+    // so that the output area shows a running history rather than just the last action
     private String txtContainer = "";
     
+    /**
+     * Constructor: Initializes the form components, creates a new CircularLinkedList instance,
+     * and sets the background color of the window's content area to a dark theme color.
+     */
     public CircularLinkedListUI() {
         initComponents();
         circularList = new CircularLinkedList();
         getContentPane().setBackground(new Color(26, 26, 26));
     }
     
+    /**
+     * Updates the output text area (txtOutput) with the current contents
+     * of txtContainer. This is called after every user action to reflect
+     * the latest state of the list operations.
+     */
     private void display() {
         txtOutput.setText(txtContainer);
     }
     
+    /**
+     * Displays a modal error dialog with a custom message.
+     * Used when the user provides invalid input (e.g., non-numeric values).
+     *
+     * @param message The error message to display in the dialog box.
+     */
     private void showErrorDialog(String message) {
         JOptionPane.showMessageDialog(this, message, "error", JOptionPane.ERROR_MESSAGE);
-    }
-    
-    private void showReminderDialog() {
-        JOptionPane.showMessageDialog(this, "Array list is empty");
     }
     
     @SuppressWarnings("unchecked")
@@ -161,45 +182,79 @@ public class CircularLinkedListUI extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Triggered when the "Insert" button is clicked.
+     * Reads the integer value from the input field and inserts it at the end
+     * of the circular linked list. Logs the action to the output area.
+     * Shows an error dialog if the input is not a valid integer.
+     */
     private void btnInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertActionPerformed
         int data;
         try {
+            // Attempt to parse the text field value as an integer
             data = Integer.parseInt(txtInput.getText());
         } catch (NumberFormatException e) {
+            // Input is not a valid number — notify the user and stop
             showErrorDialog("Invalid user input");
             return;
         }
         
+        // Insert the value at the end of the circular linked list
         circularList.insertAtEnd(data);
+        
+        // Insert the value at the end of the circular linked list
         txtContainer += data + " has been inserted.\n";
         display();
     }//GEN-LAST:event_btnInsertActionPerformed
 
+    /**
+     * Triggered when the "Traverse" button is clicked.
+     * Calls the traverse() method on the circular linked list and appends
+     * the result (a string representation of all nodes) to the output log.
+     */
     private void btnTraverseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTraverseActionPerformed
+        // Display the total number of elements in the list
         txtContainer += circularList.traverse() + "\n";
         display();
     }//GEN-LAST:event_btnTraverseActionPerformed
 
+    /**
+     * Triggered when the "Length" button is clicked.
+     * Retrieves the current number of nodes in the circular linked list
+     * and appends it to the output log.
+     */
     private void btnLengthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLengthActionPerformed
+        // Get and display the total number of elements in the list
         txtContainer += "Length: " + circularList.length() + "\n";
         display();
     }//GEN-LAST:event_btnLengthActionPerformed
 
+    /**
+     * Triggered when the "Delete" button is clicked.
+     * Reads the integer value from the input field and attempts to delete
+     * the matching node from the circular linked list.
+     * Logs whether the deletion was successful or if the value wasn't found.
+     * Shows an error dialog if the input is not a valid integer.
+     */
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         int data;
         try {
+            // Attempt to parse the input field as an integer
             data = Integer.parseInt(txtInput.getText());
         } catch (NumberFormatException e) {
+            // Input is not a valid number — show an error and stop
             showErrorDialog("Delete what?");
             return;
         }
         
+        // Attempt deletion; delete() returns true if found and removed, false otherwise
         if (circularList.delete(data)) {
             txtContainer += data + " has been deleted.\n";
         } else {
             txtContainer += data + " is not on the list.\n";
         }
         
+        // Refresh the output display with the updated log
         display();
     }//GEN-LAST:event_btnDeleteActionPerformed
 
