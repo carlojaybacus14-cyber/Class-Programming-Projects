@@ -7,24 +7,31 @@ import javax.swing.JOptionPane;
 public class ArrayDequeUI1 extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ArrayDequeUI1.class.getName());
-    
+
+    // ArrayDeque that will store integer values entered by the user
     private final ArrayDeque<Integer> arrayDeque;
+
+    // String container that stores the history of output displayed in the text area
     private String txtContainer = "";
-    
+
+    // Constructor: runs when the program starts
     public ArrayDequeUI1() {
         initComponents();
-        arrayDeque = new ArrayDeque<>();
-        getContentPane().setBackground(new Color(26, 26, 26));
+        arrayDeque = new ArrayDeque<>(); // Creates an empty ArrayDeque
+        getContentPane().setBackground(new Color(26, 26, 26)); // Sets window background color
     }
-    
+
+    // Method used to display the stored output in the text area
     private void display() {
-        txtOutput.setText(txtContainer);
+        txtOutput.setText(txtContainer); // Update the output text area with current content
     }
-    
+
+    // Method to show an error dialog when user input is invalid
     private void showErrorDialog(String message) {
         JOptionPane.showMessageDialog(this, message, "error", JOptionPane.ERROR_MESSAGE);
     }
-    
+
+    // Method to show a reminder dialog if the deque is empty
     private void showReminderDialog() {
         JOptionPane.showMessageDialog(this, "Array list is empty");
     }
@@ -160,17 +167,17 @@ public class ArrayDequeUI1 extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+        // This method runs when the "Offer" button is clicked
     private void btnOfferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOfferActionPerformed
-        int data;
+        int data;     // Variable to store user input number
         try {
-            data = Integer.parseInt(txtInput.getText());
+            data = Integer.parseInt(txtInput.getText());     // Convert the text from txtInput into an integer
         } catch (NumberFormatException e) {
-            showErrorDialog("Invalid user input");
+            showErrorDialog("Invalid user input");     // If input is not a valid number, show error dialog
             return;
         }
         
-        arrayDeque.offer(data);
+        arrayDeque.offer(data);     // Add the number to the ArrayDeque
         txtContainer += arrayDeque + "\n";
         display();
     }//GEN-LAST:event_btnOfferActionPerformed
