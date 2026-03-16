@@ -154,12 +154,12 @@ public class ArrayListUI extends javax.swing.JFrame {
         txtOutput.setText(txtContainer);
     }
 
-    //method to show the error
+    //method to show an error dialog
     private void showErrorDialog(String message) {
         JOptionPane.showMessageDialog(this, message, "error", JOptionPane.ERROR_MESSAGE);
     }
 
-    //method to remind the user if the list is empty or not
+    //method to remind the user that the list is empty
     private void showReminderDialog() {
         JOptionPane.showMessageDialog(this, "Array list is empty");
     }
@@ -167,10 +167,10 @@ public class ArrayListUI extends javax.swing.JFrame {
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         int data;
         try {
-            //converts the user input into data to add in the list
+            //converts the user input into data to be added to the list
             data = Integer.parseInt(txtInput.getText());
         } catch (NumberFormatException e) {
-            //shows an error message if user inputs an invalid integer
+            //shows an error message if the user inputs an invalid integer
             showErrorDialog("Invalid user input");
             return; 
         }
@@ -182,7 +182,7 @@ public class ArrayListUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnAccessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccessActionPerformed
-        //checks if list is empty or not
+        //checks if the list is empty or not
         if (arrayList.isEmpty()) {
             showReminderDialog();
             return;
@@ -193,24 +193,24 @@ public class ArrayListUI extends javax.swing.JFrame {
         try {
             index = Integer.parseInt(txtInput.getText());
 
-            //checks if user input is valid and is in valid size or not
+            //checks if the user input is a valid index within the list's bounds
             if (index < 0 || index >= arrayList.size()) {
                 showErrorDialog("Index out of bounds");
                 return;
             }
         } catch (HeadlessException | NumberFormatException e) {
-            //shows an error message if user inputs an invalid integer
+            //shows an error message if the user inputs an invalid integer
             JOptionPane.showMessageDialog(this, "Invalid user input", "error", JOptionPane.ERROR_MESSAGE);
             return;
         }
         
-        //access any data when user ask that "specific" data
+        //accesses any data when the user requests a specific element
         txtContainer += "Accessed element: " + arrayList.get(index) + "\n";
         display();
     }//GEN-LAST:event_btnAccessActionPerformed
 
     private void btnChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChangeActionPerformed
-        //checks if list is empty or not
+        //checks if the list is empty or not
         if (arrayList.isEmpty()) {
             showReminderDialog();
             return;
@@ -223,24 +223,24 @@ public class ArrayListUI extends javax.swing.JFrame {
             index = Integer.parseInt(JOptionPane.showInputDialog("Enter index"));
             
             if (index < 0 || index >= arrayList.size()) {
-                //checks if user input is valid and is in valid size or not
+                //checks if the user input is a valid index within the list's bounds
                 JOptionPane.showConfirmDialog(this, "Index out of bounds", "error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
         } catch (HeadlessException | NumberFormatException e) {
-            //shows an error message if user inputs an invalid integer
+            //shows an error message if the user inputs an invalid integer
             JOptionPane.showMessageDialog(this, "Invalid user input", "error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
-        //change any data if user wants to
+        //changes any data the user wants to update
         arrayList.set(index, data);
         txtContainer += arrayList + "\n";
         display();
     }//GEN-LAST:event_btnChangeActionPerformed
 
     private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
-        //checks if list is empty or not
+        //checks if the list is empty or not
         if (arrayList.isEmpty()) {
             showReminderDialog();
             return;
@@ -252,24 +252,24 @@ public class ArrayListUI extends javax.swing.JFrame {
             index = Integer.parseInt(txtInput.getText());
             
             if (index < 0 || index >= arrayList.size()) {
-                //checks if user input is valid and is in valid size or not
+                //checks if the user input is a valid index within the list's bounds
                 JOptionPane.showMessageDialog(this, "Index out of bounds", "error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
         } catch (NumberFormatException e) {
-            //shows an error message if user input an invalid integer
+            //shows an error message if the user inputs an invalid integer
             JOptionPane.showMessageDialog(this, "Invalid user input", "error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
-        //removes any data the user wants to remove
+        //removes the element the user wants to delete
         arrayList.remove(index);
         
         if (arrayList.isEmpty()) {
             //shows a message if the list is now empty
             txtContainer += "Array list is now empty.\n";
         } else {
-            //shows the available data left in the list
+            //shows the remaining elements in the list
             txtContainer += arrayList + "\n";
         }
         
