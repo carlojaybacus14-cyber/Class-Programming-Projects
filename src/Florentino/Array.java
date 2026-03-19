@@ -50,8 +50,11 @@ public class Array extends javax.swing.JFrame {
                 jLabel1.setText("ARRAY");
 
                 jTextArea1.setColumns(20);
+                jTextArea1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
                 jTextArea1.setRows(5);
                 jScrollPane1.setViewportView(jTextArea1);
+
+                jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
 
                 jLabel2.setBackground(new java.awt.Color(255, 255, 255));
                 jLabel2.setFont(new java.awt.Font("MS Gothic", 1, 13)); // NOI18N

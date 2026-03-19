@@ -47,6 +47,7 @@ public class Stack extends javax.swing.JFrame {
                 setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
                 jTextArea1.setColumns(20);
+                jTextArea1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
                 jTextArea1.setForeground(new java.awt.Color(255, 255, 255));
                 jTextArea1.setRows(5);
                 jScrollPane1.setViewportView(jTextArea1);
@@ -57,6 +58,7 @@ public class Stack extends javax.swing.JFrame {
                 jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
                 jLabel1.setText("STACK");
 
+                jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
                 jTextField1.setForeground(new java.awt.Color(255, 255, 255));
 
                 jLabel2.setFont(new java.awt.Font("MS Gothic", 1, 12)); // NOI18N
@@ -139,7 +141,7 @@ public class Stack extends javax.swing.JFrame {
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                                 .addGap(7, 7, 7)
                                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addContainerGap(40, Short.MAX_VALUE))
+                                .addContainerGap(26, Short.MAX_VALUE))
                 );
 
                 pack();
