@@ -37,9 +37,9 @@ public class ArrayDeque extends javax.swing.JFrame {
         lblOutputText = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtAreaResult = new javax.swing.JTextArea();
-        btnAdd = new javax.swing.JButton();
-        btnRemove = new javax.swing.JButton();
-        btnInsert = new javax.swing.JButton();
+        btnOffer = new javax.swing.JButton();
+        btnPoll = new javax.swing.JButton();
+        btnPeek = new javax.swing.JButton();
         btnClear = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -71,20 +71,20 @@ public class ArrayDeque extends javax.swing.JFrame {
         txtAreaResult.setRows(5);
         jScrollPane1.setViewportView(txtAreaResult);
 
-        btnAdd.setBackground(new java.awt.Color(38, 34, 15));
-        btnAdd.setFont(new java.awt.Font("Rajdhani", 1, 16)); // NOI18N
-        btnAdd.setForeground(new java.awt.Color(227, 197, 134));
-        btnAdd.setText("Add");
+        btnOffer.setBackground(new java.awt.Color(38, 34, 15));
+        btnOffer.setFont(new java.awt.Font("Rajdhani", 1, 16)); // NOI18N
+        btnOffer.setForeground(new java.awt.Color(227, 197, 134));
+        btnOffer.setText("Offer");
 
-        btnRemove.setBackground(new java.awt.Color(38, 34, 15));
-        btnRemove.setFont(new java.awt.Font("Rajdhani", 1, 16)); // NOI18N
-        btnRemove.setForeground(new java.awt.Color(227, 197, 134));
-        btnRemove.setText("Remove");
+        btnPoll.setBackground(new java.awt.Color(38, 34, 15));
+        btnPoll.setFont(new java.awt.Font("Rajdhani", 1, 16)); // NOI18N
+        btnPoll.setForeground(new java.awt.Color(227, 197, 134));
+        btnPoll.setText("Poll");
 
-        btnInsert.setBackground(new java.awt.Color(38, 34, 15));
-        btnInsert.setFont(new java.awt.Font("Rajdhani", 1, 16)); // NOI18N
-        btnInsert.setForeground(new java.awt.Color(227, 197, 134));
-        btnInsert.setText("Insert");
+        btnPeek.setBackground(new java.awt.Color(38, 34, 15));
+        btnPeek.setFont(new java.awt.Font("Rajdhani", 1, 16)); // NOI18N
+        btnPeek.setForeground(new java.awt.Color(227, 197, 134));
+        btnPeek.setText("Peek");
 
         btnClear.setBackground(new java.awt.Color(38, 34, 15));
         btnClear.setFont(new java.awt.Font("Rajdhani", 1, 16)); // NOI18N
@@ -108,11 +108,11 @@ public class ArrayDeque extends javax.swing.JFrame {
                         .addComponent(lblOutputText)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnOffer, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnRemove, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnPoll, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnPeek, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnClear, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -128,9 +128,9 @@ public class ArrayDeque extends javax.swing.JFrame {
                     .addComponent(txtInputData, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRemove, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnOffer, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPoll, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPeek, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(lblOutputText)
@@ -168,10 +168,10 @@ public class ArrayDeque extends javax.swing.JFrame {
         }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnClear;
-    private javax.swing.JButton btnInsert;
-    private javax.swing.JButton btnRemove;
+    private javax.swing.JButton btnOffer;
+    private javax.swing.JButton btnPeek;
+    private javax.swing.JButton btnPoll;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblEnterData;

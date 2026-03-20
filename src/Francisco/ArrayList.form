@@ -40,9 +40,9 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="btnAdd" min="-2" pref="90" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnRemove" min="-2" pref="90" max="-2" attributes="0"/>
+                      <Component id="btnPoll" min="-2" pref="90" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnInsert" min="-2" pref="90" max="-2" attributes="0"/>
+                      <Component id="btnPeek" min="-2" pref="90" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnClear" pref="90" max="32767" attributes="0"/>
                   </Group>
@@ -64,8 +64,8 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnAdd" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                  <Component id="btnRemove" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                  <Component id="btnInsert" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                  <Component id="btnPoll" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                  <Component id="btnPeek" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                   <Component id="btnClear" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -87,7 +87,7 @@
           <Color blue="86" green="c5" red="e3" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="ARRAY"/>
+        <Property name="text" type="java.lang.String" value="ARRAYLIST"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblEnterData">
@@ -166,7 +166,7 @@
         <Property name="text" type="java.lang.String" value="Add"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnRemove">
+    <Component class="javax.swing.JButton" name="btnPoll">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="f" green="22" red="26" type="rgb"/>
@@ -177,10 +177,10 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="86" green="c5" red="e3" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Remove"/>
+        <Property name="text" type="java.lang.String" value="Poll"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnInsert">
+    <Component class="javax.swing.JButton" name="btnPeek">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="f" green="22" red="26" type="rgb"/>
@@ -191,7 +191,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="86" green="c5" red="e3" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Insert"/>
+        <Property name="text" type="java.lang.String" value="Peek"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnClear">

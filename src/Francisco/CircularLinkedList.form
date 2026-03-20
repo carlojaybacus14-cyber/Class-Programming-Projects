@@ -38,13 +38,13 @@
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="btnAdd" min="-2" pref="90" max="-2" attributes="0"/>
+                      <Component id="btnInsert" min="-2" pref="95" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnRemove" min="-2" pref="90" max="-2" attributes="0"/>
+                      <Component id="btnTraverse" min="-2" pref="95" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnInsert" min="-2" pref="90" max="-2" attributes="0"/>
+                      <Component id="btnLength" min="-2" pref="95" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnClear" pref="90" max="32767" attributes="0"/>
+                      <Component id="btnDelete" pref="95" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -63,15 +63,15 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnAdd" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                  <Component id="btnRemove" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                   <Component id="btnInsert" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                  <Component id="btnClear" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                  <Component id="btnTraverse" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                  <Component id="btnLength" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                  <Component id="btnDelete" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="lblOutputText" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane1" pref="170" max="32767" attributes="0"/>
+              <Component id="jScrollPane1" pref="185" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -87,7 +87,7 @@
           <Color blue="86" green="c5" red="e3" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="ARRAY"/>
+        <Property name="text" type="java.lang.String" value="CIRCULAR LINKED LIST"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblEnterData">
@@ -152,34 +152,6 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="btnAdd">
-      <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="f" green="22" red="26" type="rgb"/>
-        </Property>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Rajdhani" size="16" style="1"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="86" green="c5" red="e3" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Add"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnRemove">
-      <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="f" green="22" red="26" type="rgb"/>
-        </Property>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Rajdhani" size="16" style="1"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="86" green="c5" red="e3" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Remove"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JButton" name="btnInsert">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -193,8 +165,11 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Insert"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnInsertActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnClear">
+    <Component class="javax.swing.JButton" name="btnTraverse">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="f" green="22" red="26" type="rgb"/>
@@ -205,7 +180,35 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="86" green="c5" red="e3" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Clear"/>
+        <Property name="text" type="java.lang.String" value="Traverse"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnLength">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="f" green="22" red="26" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Rajdhani" size="16" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="86" green="c5" red="e3" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Length"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnDelete">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="f" green="22" red="26" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Rajdhani" size="16" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="86" green="c5" red="e3" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Delete"/>
       </Properties>
     </Component>
   </SubComponents>

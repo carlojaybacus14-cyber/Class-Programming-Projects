@@ -38,8 +38,8 @@ public class ArrayList extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         txtAreaResult = new javax.swing.JTextArea();
         btnAdd = new javax.swing.JButton();
-        btnRemove = new javax.swing.JButton();
-        btnInsert = new javax.swing.JButton();
+        btnPoll = new javax.swing.JButton();
+        btnPeek = new javax.swing.JButton();
         btnClear = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -47,7 +47,7 @@ public class ArrayList extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Rajdhani", 1, 28)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(227, 197, 134));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("ARRAY");
+        jLabel1.setText("ARRAYLIST");
 
         lblEnterData.setFont(new java.awt.Font("Rajdhani SemiBold", 1, 14)); // NOI18N
         lblEnterData.setForeground(new java.awt.Color(227, 197, 134));
@@ -76,15 +76,15 @@ public class ArrayList extends javax.swing.JFrame {
         btnAdd.setForeground(new java.awt.Color(227, 197, 134));
         btnAdd.setText("Add");
 
-        btnRemove.setBackground(new java.awt.Color(38, 34, 15));
-        btnRemove.setFont(new java.awt.Font("Rajdhani", 1, 16)); // NOI18N
-        btnRemove.setForeground(new java.awt.Color(227, 197, 134));
-        btnRemove.setText("Remove");
+        btnPoll.setBackground(new java.awt.Color(38, 34, 15));
+        btnPoll.setFont(new java.awt.Font("Rajdhani", 1, 16)); // NOI18N
+        btnPoll.setForeground(new java.awt.Color(227, 197, 134));
+        btnPoll.setText("Poll");
 
-        btnInsert.setBackground(new java.awt.Color(38, 34, 15));
-        btnInsert.setFont(new java.awt.Font("Rajdhani", 1, 16)); // NOI18N
-        btnInsert.setForeground(new java.awt.Color(227, 197, 134));
-        btnInsert.setText("Insert");
+        btnPeek.setBackground(new java.awt.Color(38, 34, 15));
+        btnPeek.setFont(new java.awt.Font("Rajdhani", 1, 16)); // NOI18N
+        btnPeek.setForeground(new java.awt.Color(227, 197, 134));
+        btnPeek.setText("Peek");
 
         btnClear.setBackground(new java.awt.Color(38, 34, 15));
         btnClear.setFont(new java.awt.Font("Rajdhani", 1, 16)); // NOI18N
@@ -110,9 +110,9 @@ public class ArrayList extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnRemove, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnPoll, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnPeek, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnClear, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -129,8 +129,8 @@ public class ArrayList extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRemove, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPoll, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPeek, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(lblOutputText)
@@ -170,8 +170,8 @@ public class ArrayList extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnClear;
-    private javax.swing.JButton btnInsert;
-    private javax.swing.JButton btnRemove;
+    private javax.swing.JButton btnPeek;
+    private javax.swing.JButton btnPoll;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblEnterData;
