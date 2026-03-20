@@ -7,7 +7,7 @@ public class CicularLinkedListUI extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CicularLinkedListUI.class.getName());
 
-    private String texts;
+    private String texts = "";
 
     private final CircularLinkedList circularList;
 
@@ -28,7 +28,7 @@ public class CicularLinkedListUI extends javax.swing.JFrame {
         btnInsert = new javax.swing.JButton();
         btnTraverse = new javax.swing.JButton();
         btnLength = new javax.swing.JButton();
-        btnClear = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtOutput = new javax.swing.JTextArea();
@@ -67,13 +67,13 @@ public class CicularLinkedListUI extends javax.swing.JFrame {
             }
         });
 
-        btnClear.setBackground(new java.awt.Color(114, 16, 16));
-        btnClear.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 14)); // NOI18N
-        btnClear.setForeground(new java.awt.Color(245, 225, 225));
-        btnClear.setText("CLEAR");
-        btnClear.addActionListener(new java.awt.event.ActionListener() {
+        btnDelete.setBackground(new java.awt.Color(114, 16, 16));
+        btnDelete.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 14)); // NOI18N
+        btnDelete.setForeground(new java.awt.Color(245, 225, 225));
+        btnDelete.setText("DELETE");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnClearActionPerformed(evt);
+                btnDeleteActionPerformed(evt);
             }
         });
 
@@ -85,6 +85,7 @@ public class CicularLinkedListUI extends javax.swing.JFrame {
         txtOutput.setEditable(false);
         txtOutput.setBackground(new java.awt.Color(62, 20, 22));
         txtOutput.setColumns(20);
+        txtOutput.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         txtOutput.setForeground(new java.awt.Color(245, 225, 225));
         txtOutput.setRows(5);
         jScrollPane1.setViewportView(txtOutput);
@@ -110,7 +111,7 @@ public class CicularLinkedListUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnLength, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnClear, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE))
+                        .addComponent(btnDelete, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE))
                     .addComponent(txtInput)
                     .addComponent(jScrollPane1)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -135,7 +136,7 @@ public class CicularLinkedListUI extends javax.swing.JFrame {
                     .addComponent(btnInsert)
                     .addComponent(btnTraverse)
                     .addComponent(btnLength)
-                    .addComponent(btnClear))
+                    .addComponent(btnDelete))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
@@ -161,7 +162,7 @@ public class CicularLinkedListUI extends javax.swing.JFrame {
 
         circularList.insertAtEnd(data);
 
-        texts += data + " is inserted.";
+        texts += data + " is inserted.\n";
 
         displayText();
     }//GEN-LAST:event_btnInsertActionPerformed
@@ -176,7 +177,7 @@ public class CicularLinkedListUI extends javax.swing.JFrame {
         displayText();
     }//GEN-LAST:event_btnLengthActionPerformed
 
-    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         int data;
         try {
             data = Integer.parseInt(txtInput.getText());
@@ -192,7 +193,7 @@ public class CicularLinkedListUI extends javax.swing.JFrame {
         }
 
         displayText();
-    }//GEN-LAST:event_btnClearActionPerformed
+    }//GEN-LAST:event_btnDeleteActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -217,7 +218,7 @@ public class CicularLinkedListUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnClear;
+    private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnInsert;
     private javax.swing.JButton btnLength;
     private javax.swing.JButton btnTraverse;
