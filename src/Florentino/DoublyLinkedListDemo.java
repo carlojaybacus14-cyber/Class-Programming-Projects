@@ -8,16 +8,16 @@ public class DoublyLinkedListDemo extends javax.swing.JFrame {
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(DoublyLinkedListDemo.class.getName());
 
     private String textContainer = "";
-    
+
     private final DoublyLinkedList doublyList;
-    
+
     public DoublyLinkedListDemo() {
         initComponents();
         getContentPane().setBackground(new Color(0, 153, 102));
-        
+
         doublyList = new DoublyLinkedList();
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -139,73 +139,73 @@ public class DoublyLinkedListDemo extends javax.swing.JFrame {
 
     private void btnInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertActionPerformed
         String str = txtInput.getText();
-        
+
         if (str.isBlank()) {
             JOptionPane.showMessageDialog(this, "Enter a data");
             return;
         }
-        
+
         try {
-            
+
             int data = Integer.parseInt(str);
             doublyList.insertAtEnd(data);
-            
+
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Invalid input");
         }
-        
+
         textContainer += doublyList.printList() + "\n";
         txtOutput.setText(textContainer);
     }//GEN-LAST:event_btnInsertActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         String str = txtInput.getText();
-        
+
         if (str.isBlank()) {
             JOptionPane.showMessageDialog(this, "Enter a data to delete");
             return;
         }
-        
+
         try {
             int data = Integer.parseInt(str);
             doublyList.deleteData(data);
-            
+
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Invalid input");
         }
-        
+
         textContainer += doublyList.printList() + "\n";
         txtOutput.setText(textContainer);
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnLengthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLengthActionPerformed
-        textContainer += "Length: " + doublyList.size();
+        textContainer += "Length: " + doublyList.size() + "\n";
         txtOutput.setText(textContainer);
     }//GEN-LAST:event_btnLengthActionPerformed
 
     private void btnDeletePosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletePosActionPerformed
         String str = txtInput.getText();
-        
+
         if (str.isBlank()) {
             JOptionPane.showMessageDialog(this, "Enter an index to delete");
             return;
         }
-        
+
         try {
             int index = Integer.parseInt(str);
-            
+
             if (index < 0 || index >= doublyList.size()) {
-                 JOptionPane.showMessageDialog(this, "Index out of bounds");
-                 return;
+                JOptionPane.showMessageDialog(this, "Index out of bounds");
+                return;
             }
-            
+
             doublyList.deleteAtIndex(index);
-            
+
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Invalid input");
             return;
         }
-        
+
         textContainer += doublyList.printList() + "\n";
         txtOutput.setText(textContainer);
     }//GEN-LAST:event_btnDeletePosActionPerformed
