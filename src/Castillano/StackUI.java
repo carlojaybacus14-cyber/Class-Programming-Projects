@@ -1,66 +1,98 @@
 package Castillano;
 
 import java.awt.Color;
+import java.util.Stack;
+import javax.swing.JOptionPane;
 
 public class StackUI extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(StackUI.class.getName());
 
+    private String texts = "";
+
+    private final Stack<Integer> stack;
+
     public StackUI() {
         initComponents();
         getContentPane().setBackground(new Color(44, 15, 18));
+
+        stack = new Stack<>();
+    }
+
+    private void displayText() {
+        txtOutput.setText(texts);
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnPush = new javax.swing.JButton();
+        btnPop = new javax.swing.JButton();
+        btnPeek = new javax.swing.JButton();
+        btnClear = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jTextField1 = new javax.swing.JTextField();
+        txtOutput = new javax.swing.JTextArea();
+        txtInput = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setBackground(new java.awt.Color(107, 30, 35));
-        jButton1.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(245, 225, 225));
-        jButton1.setText("PUSH");
+        btnPush.setBackground(new java.awt.Color(107, 30, 35));
+        btnPush.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 14)); // NOI18N
+        btnPush.setForeground(new java.awt.Color(245, 225, 225));
+        btnPush.setText("PUSH");
+        btnPush.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPushActionPerformed(evt);
+            }
+        });
 
-        jButton2.setBackground(new java.awt.Color(107, 30, 35));
-        jButton2.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(245, 225, 225));
-        jButton2.setText("POP");
+        btnPop.setBackground(new java.awt.Color(107, 30, 35));
+        btnPop.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 14)); // NOI18N
+        btnPop.setForeground(new java.awt.Color(245, 225, 225));
+        btnPop.setText("POP");
+        btnPop.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPopActionPerformed(evt);
+            }
+        });
 
-        jButton3.setBackground(new java.awt.Color(107, 30, 35));
-        jButton3.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(245, 225, 225));
-        jButton3.setText("PEEK");
+        btnPeek.setBackground(new java.awt.Color(107, 30, 35));
+        btnPeek.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 14)); // NOI18N
+        btnPeek.setForeground(new java.awt.Color(245, 225, 225));
+        btnPeek.setText("PEEK");
+        btnPeek.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPeekActionPerformed(evt);
+            }
+        });
 
-        jButton4.setBackground(new java.awt.Color(114, 16, 16));
-        jButton4.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 14)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(245, 225, 225));
-        jButton4.setText("CLEAR");
+        btnClear.setBackground(new java.awt.Color(114, 16, 16));
+        btnClear.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 14)); // NOI18N
+        btnClear.setForeground(new java.awt.Color(245, 225, 225));
+        btnClear.setText("CLEAR");
+        btnClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(210, 140, 140));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("STACK");
 
-        jTextArea1.setEditable(false);
-        jTextArea1.setBackground(new java.awt.Color(62, 20, 22));
-        jTextArea1.setColumns(20);
-        jTextArea1.setForeground(new java.awt.Color(245, 225, 225));
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        txtOutput.setEditable(false);
+        txtOutput.setBackground(new java.awt.Color(62, 20, 22));
+        txtOutput.setColumns(20);
+        txtOutput.setForeground(new java.awt.Color(245, 225, 225));
+        txtOutput.setRows(5);
+        jScrollPane1.setViewportView(txtOutput);
 
-        jTextField1.setBackground(new java.awt.Color(62, 20, 22));
-        jTextField1.setForeground(new java.awt.Color(245, 225, 225));
+        txtInput.setBackground(new java.awt.Color(62, 20, 22));
+        txtInput.setForeground(new java.awt.Color(245, 225, 225));
 
         jLabel2.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(210, 140, 140));
@@ -74,14 +106,14 @@ public class StackUI extends javax.swing.JFrame {
                 .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnPush, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnPop, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnPeek, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE))
-                    .addComponent(jTextField1)
+                        .addComponent(btnClear, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE))
+                    .addComponent(txtInput)
                     .addComponent(jScrollPane1)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
@@ -99,19 +131,74 @@ public class StackUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtInput, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(btnPush)
+                    .addComponent(btnPop)
+                    .addComponent(btnPeek)
+                    .addComponent(btnClear))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnPushActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPushActionPerformed
+        String txt = txtInput.getText();
+
+        if (txt.isBlank()) {
+            JOptionPane.showMessageDialog(this, "Please enter a data.");
+            return;
+        }
+
+        int data;
+
+        try {
+            data = Integer.parseInt(txt);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid input.");
+            return;
+        }
+
+        stack.push(data);
+
+        texts += stack + "\n";
+        txtInput.setText("");
+
+        displayText();
+    }//GEN-LAST:event_btnPushActionPerformed
+
+    private void btnPopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPopActionPerformed
+        if (stack.empty()) {
+            JOptionPane.showMessageDialog(this, "Deque is empty.");
+            return;
+        }
+
+        stack.pop();
+
+        texts += stack + "\n";
+
+        displayText();
+    }//GEN-LAST:event_btnPopActionPerformed
+
+    private void btnPeekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPeekActionPerformed
+        if (stack.empty()) {
+            JOptionPane.showMessageDialog(this, "Deque is empty.");
+            return;
+        }
+
+        texts += "Top element: " + stack.peek() + "\n";
+
+        displayText();
+    }//GEN-LAST:event_btnPeekActionPerformed
+
+    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
+        stack.clear();
+        texts += "Stack cleared.";
+        displayText();
+    }//GEN-LAST:event_btnClearActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -136,14 +223,14 @@ public class StackUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btnClear;
+    private javax.swing.JButton btnPeek;
+    private javax.swing.JButton btnPop;
+    private javax.swing.JButton btnPush;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField txtInput;
+    private javax.swing.JTextArea txtOutput;
     // End of variables declaration//GEN-END:variables
 }

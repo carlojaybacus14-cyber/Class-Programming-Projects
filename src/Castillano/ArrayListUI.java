@@ -1,66 +1,98 @@
 package Castillano;
 
 import java.awt.Color;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class ArrayListUI extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ArrayListUI.class.getName());
 
+    private String texts = "";
+
+    private final ArrayList<Integer> arrayList;
+
     public ArrayListUI() {
         initComponents();
         getContentPane().setBackground(new Color(44, 15, 18));
+
+        arrayList = new ArrayList<>();
+    }
+
+    private void displayText() {
+        txtOutput.setText(texts);
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnAdd = new javax.swing.JButton();
+        btnRemove = new javax.swing.JButton();
+        btnChange = new javax.swing.JButton();
+        btnClear = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jTextField1 = new javax.swing.JTextField();
+        txtOutput = new javax.swing.JTextArea();
+        txtInput = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setBackground(new java.awt.Color(107, 30, 35));
-        jButton1.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(245, 225, 225));
-        jButton1.setText("ADD");
+        btnAdd.setBackground(new java.awt.Color(107, 30, 35));
+        btnAdd.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 14)); // NOI18N
+        btnAdd.setForeground(new java.awt.Color(245, 225, 225));
+        btnAdd.setText("ADD");
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddActionPerformed(evt);
+            }
+        });
 
-        jButton2.setBackground(new java.awt.Color(107, 30, 35));
-        jButton2.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(245, 225, 225));
-        jButton2.setText("POLL");
+        btnRemove.setBackground(new java.awt.Color(107, 30, 35));
+        btnRemove.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 14)); // NOI18N
+        btnRemove.setForeground(new java.awt.Color(245, 225, 225));
+        btnRemove.setText("REMOVE");
+        btnRemove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRemoveActionPerformed(evt);
+            }
+        });
 
-        jButton3.setBackground(new java.awt.Color(107, 30, 35));
-        jButton3.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(245, 225, 225));
-        jButton3.setText("CHANGE");
+        btnChange.setBackground(new java.awt.Color(107, 30, 35));
+        btnChange.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 14)); // NOI18N
+        btnChange.setForeground(new java.awt.Color(245, 225, 225));
+        btnChange.setText("CHANGE");
+        btnChange.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnChangeActionPerformed(evt);
+            }
+        });
 
-        jButton4.setBackground(new java.awt.Color(114, 16, 16));
-        jButton4.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 14)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(245, 225, 225));
-        jButton4.setText("CLEAR");
+        btnClear.setBackground(new java.awt.Color(114, 16, 16));
+        btnClear.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 14)); // NOI18N
+        btnClear.setForeground(new java.awt.Color(245, 225, 225));
+        btnClear.setText("CLEAR");
+        btnClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(210, 140, 140));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("ARRAY LIST");
 
-        jTextArea1.setEditable(false);
-        jTextArea1.setBackground(new java.awt.Color(62, 20, 22));
-        jTextArea1.setColumns(20);
-        jTextArea1.setForeground(new java.awt.Color(245, 225, 225));
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        txtOutput.setEditable(false);
+        txtOutput.setBackground(new java.awt.Color(62, 20, 22));
+        txtOutput.setColumns(20);
+        txtOutput.setForeground(new java.awt.Color(245, 225, 225));
+        txtOutput.setRows(5);
+        jScrollPane1.setViewportView(txtOutput);
 
-        jTextField1.setBackground(new java.awt.Color(62, 20, 22));
-        jTextField1.setForeground(new java.awt.Color(245, 225, 225));
+        txtInput.setBackground(new java.awt.Color(62, 20, 22));
+        txtInput.setForeground(new java.awt.Color(245, 225, 225));
 
         jLabel2.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(210, 140, 140));
@@ -74,14 +106,14 @@ public class ArrayListUI extends javax.swing.JFrame {
                 .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnRemove, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnChange, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE))
-                    .addComponent(jTextField1)
+                        .addComponent(btnClear, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE))
+                    .addComponent(txtInput)
                     .addComponent(jScrollPane1)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
@@ -99,19 +131,120 @@ public class ArrayListUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtInput, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(btnAdd)
+                    .addComponent(btnRemove)
+                    .addComponent(btnChange)
+                    .addComponent(btnClear))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        String txt = txtInput.getText();
+
+        if (txt.isBlank()) {
+            JOptionPane.showMessageDialog(this, "Please enter a data.");
+            return;
+        }
+
+        int data;
+
+        try {
+            data = Integer.parseInt(txt);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid input.");
+            return;
+        }
+
+        arrayList.add(data);
+
+        texts += arrayList + "\n";
+        txtInput.setText("");
+
+        displayText();
+    }//GEN-LAST:event_btnAddActionPerformed
+
+    private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
+        String txt = txtInput.getText();
+
+        if (txt.isBlank()) {
+            JOptionPane.showMessageDialog(this, "Please enter an index.");
+            return;
+        }
+
+        if (arrayList.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "List is empty.");
+            return;
+        }
+
+        int index;
+
+        try {
+            index = Integer.parseInt(txt);
+            
+            if (index < 0 || index >= arrayList.size()) {
+                JOptionPane.showMessageDialog(this, "Index out of bounds.");
+                return;
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid input.");
+            return;
+        }
+
+        arrayList.remove(index);
+        
+        texts += arrayList + "\n";
+
+        displayText();
+    }//GEN-LAST:event_btnRemoveActionPerformed
+
+    private void btnChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChangeActionPerformed
+        String txt = txtInput.getText();
+
+        if (txt.isBlank()) {
+            JOptionPane.showMessageDialog(this, "Please enter a data to change.");
+            return;
+        }
+
+        if (arrayList.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "List is empty.");
+            return;
+        }
+
+        int data, index;
+        
+        try {
+            data = Integer.parseInt(txt);
+            index = Integer.parseInt(JOptionPane.showInputDialog("Enter an index."));
+            
+            if (index < 0 || index >= arrayList.size()) {
+                JOptionPane.showMessageDialog(this, "Index out of bounds");
+                return;
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid input.");
+            return;
+        }
+        
+        arrayList.set(index, data);
+        
+        texts += arrayList + "\n";
+        txtInput.setText("");
+        
+        displayText();
+    }//GEN-LAST:event_btnChangeActionPerformed
+
+    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
+        arrayList.clear();
+        texts += "List cleared.";
+        displayText();
+    }//GEN-LAST:event_btnClearActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -136,14 +269,14 @@ public class ArrayListUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnChange;
+    private javax.swing.JButton btnClear;
+    private javax.swing.JButton btnRemove;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField txtInput;
+    private javax.swing.JTextArea txtOutput;
     // End of variables declaration//GEN-END:variables
 }

@@ -11,12 +11,15 @@ public class ArrayDequeUI extends javax.swing.JFrame {
     private String texts = "";
 
     private final ArrayDeque<Integer> arrayDeque;
+    
+    private final OfferDialog offerDialog;
 
     public ArrayDequeUI() {
         initComponents();
         getContentPane().setBackground(new Color(44, 15, 18));
 
         arrayDeque = new ArrayDeque<>();
+        offerDialog = new OfferDialog(this, true);
     }
 
     private void displayText() {
@@ -161,8 +164,20 @@ public class ArrayDequeUI extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Invalid input.");
             return;
         }
-
-        arrayDeque.offer(data);
+        
+        offerDialog.setVisible(true);
+        
+        switch (offerDialog.getOfferType()) {
+            case "FIRST" -> {
+                arrayDeque.offerFirst(data);
+            }
+            case "LAST" -> {
+                arrayDeque.offerFirst(data);
+            }
+            default -> {
+                return;
+            }  
+        }
 
         texts += arrayDeque + "\n";
         txtInput.setText("");
