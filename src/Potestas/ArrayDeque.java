@@ -81,7 +81,7 @@ public class ArrayDeque extends javax.swing.JFrame {
                 jLabel1.setFont(new java.awt.Font("Sitka Text", 1, 24)); // NOI18N
                 jLabel1.setForeground(new java.awt.Color(255, 193, 74));
                 jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-                jLabel1.setText("ARRAYLIST");
+                jLabel1.setText("ARRAY DEQUE");
 
                 jTextField1.setBackground(new java.awt.Color(136, 112, 168));
                 jTextField1.setForeground(new java.awt.Color(240, 230, 255));

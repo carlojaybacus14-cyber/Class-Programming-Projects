@@ -175,7 +175,7 @@
           <Color blue="4a" green="c1" red="ff" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="2"/>
-        <Property name="text" type="java.lang.String" value="ARRAYLIST"/>
+        <Property name="text" type="java.lang.String" value="DOUBLY LINKED LIST"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField1">
