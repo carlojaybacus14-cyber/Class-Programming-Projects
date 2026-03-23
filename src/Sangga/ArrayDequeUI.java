@@ -4,6 +4,8 @@
  */
 package Sangga;
 
+import java.awt.Color;
+
 /**
  *
  * @author Jay Aguirre Alfeche
@@ -17,6 +19,7 @@ public class ArrayDequeUI extends javax.swing.JFrame {
          */
         public ArrayDequeUI() {
                 initComponents();
+                getContentPane().setBackground(Color.DARK_GRAY);
         }
 
         /**
