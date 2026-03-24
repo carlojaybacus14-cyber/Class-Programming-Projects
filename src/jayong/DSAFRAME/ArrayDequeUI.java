@@ -12,28 +12,27 @@ import java.util.ArrayDeque;
  */
 public class ArrayDequeUI extends javax.swing.JFrame {
 
-        private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ArrayDequeUI.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ArrayDequeUI.class.getName());
 
-        private ArrayDeque<String> AD;
-        
+    private ArrayDeque<String> AD;
 
-        public ArrayDequeUI() {
-                AD = new ArrayDeque<>();
-                setTitle("ARRAY DEQUE FRAME");
-                initComponents();
-                this.setLocationRelativeTo(null);
-        }
+    public ArrayDequeUI() {
+        AD = new ArrayDeque<>();
+        setTitle("ARRAY DEQUE FRAME");
+        initComponents();
+        this.setLocationRelativeTo(null);
+    }
 
-        private void displayArrayDeque() {
-                txtArea.setText("Current ArrayDeque:\n");
-                for (String element : AD) {
-                        txtArea.append(element + "\n");
-
-                }
+    private void displayArrayDeque() {
+        txtArea.setText("Current ArrayDeque:\n");
+        for (String element : AD) {
+            txtArea.append(element + "\n");
 
         }
 
-        @SuppressWarnings("unchecked")
+    }
+
+    @SuppressWarnings("unchecked")
         // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
         private void initComponents() {
 
@@ -164,70 +163,70 @@ public class ArrayDequeUI extends javax.swing.JFrame {
         }// </editor-fold>//GEN-END:initComponents
 
         private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
-                AD.clear();
-                displayArrayDeque();
+            AD.clear();
+            displayArrayDeque();
         }//GEN-LAST:event_btnClearActionPerformed
 
         private void PeekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PeekActionPerformed
-                if (Peek.getSelectedItem() == null) {
-                        txtArea.append("ArrayDeque is empty, nothing to peek.\n");
-                }
+            if (Peek.getSelectedItem() == null) {
+                txtArea.append("ArrayDeque is empty, nothing to peek.\n");
+            }
 
-                if (Peek.getSelectedItem().equals("PEEK FIRST")) {
-                        String peekFIRST = AD.peekFirst();
-                        txtArea.append("First Element: " + peekFIRST + "\n");
-                } else {
-                        String peekLAST = AD.peekLast();
-                        txtArea.append("Last Element: " + peekLAST + "\n");
-                }
+            if (Peek.getSelectedItem().equals("PEEK FIRST")) {
+                String peekFIRST = AD.peekFirst();
+                txtArea.append("First Element: " + peekFIRST + "\n");
+            } else {
+                String peekLAST = AD.peekLast();
+                txtArea.append("Last Element: " + peekLAST + "\n");
+            }
         }//GEN-LAST:event_PeekActionPerformed
 
         private void PollActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PollActionPerformed
-                if (Poll.getSelectedItem() == null) {
-                        txtArea.append("ArrayDeque is empty, nothing to remove.\n");
-                }
+            if (Poll.getSelectedItem() == null) {
+                txtArea.append("ArrayDeque is empty, nothing to remove.\n");
+            }
 
-                if (Poll.getSelectedItem().equals("POLL FIRST")) {
-                        String pollFIRST = AD.pollFirst();
-                        txtArea.append("Remove First Element: " + pollFIRST + "\n");
-                        displayArrayDeque();
-                } else {
-                        String pollLAST = AD.pollLast();
-                        txtArea.append("Remove Last Element: " + pollLAST + "\n");
-                        displayArrayDeque();
-                }
+            if (Poll.getSelectedItem().equals("POLL FIRST")) {
+                String pollFIRST = AD.pollFirst();
+                txtArea.append("Remove First Element: " + pollFIRST + "\n");
+                displayArrayDeque();
+            } else {
+                String pollLAST = AD.pollLast();
+                txtArea.append("Remove Last Element: " + pollLAST + "\n");
+                displayArrayDeque();
+            }
         }//GEN-LAST:event_PollActionPerformed
 
         private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-                String data = txtInput.getText();
-                if (!data.isEmpty()) {
-                        AD.offer(data);
-                        txtArea.setText("");
-                        displayArrayDeque();
-                }
-                txtInput.setText("");
+            String data = txtInput.getText();
+            if (!data.isEmpty()) {
+                AD.offer(data);
+                txtArea.setText("");
+                displayArrayDeque();
+            }
+            txtInput.setText("");
         }//GEN-LAST:event_jButton1ActionPerformed
-        public static void main(String args[]) {
-                /* Set the Nimbus look and feel */
-                //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-                /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-                 */
-                try {
-                        for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                                if ("Nimbus".equals(info.getName())) {
-                                        javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                                        break;
-                                }
-                        }
-                } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-                        logger.log(java.util.logging.Level.SEVERE, null, ex);
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
                 }
-                //</editor-fold>
-
-                /* Create and display the form */
-                java.awt.EventQueue.invokeLater(() -> new ArrayDequeUI().setVisible(true));
+            }
+        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
+            logger.log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(() -> new ArrayDequeUI().setVisible(true));
+    }
         // Variables declaration - do not modify//GEN-BEGIN:variables
         private javax.swing.JComboBox<String> Peek;
         private javax.swing.JComboBox<String> Poll;

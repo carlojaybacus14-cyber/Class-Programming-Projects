@@ -2,187 +2,20 @@ package Jayong.DSAFRAME;
 
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Jay Aguirre Alfeche
- */
 public class SinglyUI extends javax.swing.JFrame {
 
-        private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(SinglyUI.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(SinglyUI.class.getName());
 
-        private void setLocationRelativeTo(Object object) {
-                throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        }
+    private SinglyLinkedList singlyList = new SinglyLinkedList();
 
-        public SinglyUI() {
-                initComponents();
-                this.setLocationRelativeTo(null);
-        }
+    private String strContainer = "";
 
-        public class Node {
+    public SinglyUI() {
+        initComponents();
+        this.setLocationRelativeTo(null);
+    }
 
-                int data;
-                Node next;
-
-                Node(int data) {
-                        this.data = data;
-                        this.next = null;
-                }
-        }
-        private Node head;
-        private int size;
-
-        // --- DISPLAY VALUES ---
-        public String printList() {
-                Node current = head;
-                String txtContainer = "";
-                while (current != null) {
-                        txtContainer += current.data + " -> ";
-                        current = current.next;
-                }
-                return txtContainer += "null";
-        }
-
-        // --- INSERT AT BEGINNING ---
-        public void insertAtBeginning(int data) {
-                Node newNode = new Node(data);
-                newNode.next = head;
-                head = newNode;
-                size++;
-        }
-
-        // --- INSERT AT END ---
-        public void insertAtEnd(int data) {
-                Node newNode = new Node(data);
-                if (head == null) {
-                        head = newNode;
-                } else {
-                        Node last = head;
-                        while (last.next != null) {
-                                last = last.next;
-                        }
-                        last.next = newNode;
-                }
-                size++;
-        }
-
-        // --- INSERT AFTER ---
-        public void insertAfter(int prevData, int data) {
-                Node current = head;
-
-                while (current.data != prevData) {
-                        current = current.next;
-                        if (current == null) {
-                                System.out.println("Previous data does not exist.");
-                                return;
-                        }
-                }
-
-                Node newNode = new Node(data);
-                newNode.next = current.next;
-                current.next = newNode;
-        }
-
-        // --- DELETE BY VALUE ---
-        public void deleteByValue(int value) {
-
-                Node current = head;
-                Node previous = null;
-
-                if (current != null && current.data == value) {
-                        head = current.next;
-                        size--;
-                        return;
-                }
-
-                while (current != null && current.data != value) {
-                        previous = current;
-                        current = current.next;
-                }
-
-                if (current == null) {
-                        return;
-                }
-
-                previous.next = current.next;
-                size--;
-        }
-
-        // --- DELETE BY POSITION ---
-        public void deleteAtIndex(int index) {
-                if (head == null) {
-                        return;
-                }
-
-                Node current = head;
-                if (index == 0) {
-                        head = current.next;
-                        size--;
-                        return;
-                }
-
-                for (int i = 0; current.next != null && i < index - 1; i++) {
-                        current = current.next;
-                }
-
-                if (current == null || current.next == null) {
-                        return;
-                }
-
-                Node next = current.next.next;
-                current.next = next;
-                size--;
-        }
-
-        // --- DELETE AT BEGINNING ---
-        public void deleteAtBeginning() {
-                if (head == null) {
-                        return;
-                }
-                head = head.next;
-                size--;
-        }
-
-        // --- DELETE AT END ---
-        public void deleteAtEnd() {
-                if (head == null) {
-                        return;
-                }
-                Node current = head;
-                while (current.next.next != null) {
-                        current = current.next;
-                }
-                current.next = null;
-                size--;
-        }
-
-        // --- GET NODE AT ---
-        public Node getNodeAtIndex(int index) {
-                Node current = head;
-                for (int i = 0; current != null && i < index; i++) {
-                        current = current.next;
-                }
-                return current;
-        }
-
-        public Node getNodeByValueOf(int value) {
-                Node current = head;
-                while (current != null && current.data != value) {
-                        current = current.next;
-                }
-                return current;
-        }
-
-        public void clear() {
-                head = null;
-        }
-
-        // --- SIZE ---
-        public int length() {
-                return size;
-        }
-
-        @SuppressWarnings("unchecked")
+    @SuppressWarnings("unchecked")
         // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
         private void initComponents() {
 
@@ -326,88 +159,89 @@ public class SinglyUI extends javax.swing.JFrame {
         }// </editor-fold>//GEN-END:initComponents
 
         private void InsertAtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertAtActionPerformed
-                String SLL = txtInput.getText();
-                if (SLL.isEmpty()) {
-                        JOptionPane.showMessageDialog(this, "No Input.", "Error",
-                                JOptionPane.ERROR_MESSAGE);
-                        return;
+            switch (InsertAt.getSelectedItem().toString()) {
+                case "INSERT AT BEGINNING" -> {
 
                 }
-                try {
-                        int element = Integer.parseInt(SLL);
-                        if (InsertAt.getSelectedItem().equals("Insert at Beginning")) {
-                                insertAtBeginning(element);
-                                txtArea.append(SLL + " is Inserted at beginning.\n");
+                case "INSERT AT END" -> {
 
-                        } else if (InsertAt.getSelectedItem().equals("Insert at End")) {
-                                insertAtEnd(element);
-                                txtArea.append(SLL + " is Inserted at end.\n");
-                        }
-                } catch (Exception e) {
                 }
-
+            }
+            
+            strContainer += "List is cleared.";
+            txtArea.setText(strContainer);
         }//GEN-LAST:event_InsertAtActionPerformed
 
         private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
-                // TODO add your handling code here:
+            String s = txtInput.getText();
+            if (s.isBlank()) {
+                JOptionPane.showMessageDialog(this, "Please enter a data");
+                return; 
+            }
+            
+            int data;
+            
+            try {
+                data = Integer.parseInt(s);
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(this, "Invalid input");
+                return;
+            }
+            
+            switch (Delete.getSelectedItem().toString()) {
+                case "DELETE BY VALUE" -> {
+                    
+                }
+                case "DELETE BY POSITION" -> {
+                    
+                }
+            }
+            
+            strContainer += data + " has been deleted.";
+            txtArea.setText(strContainer);
         }//GEN-LAST:event_DeleteActionPerformed
 
         private void btnInsertAfterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertAfterActionPerformed
-                // TODO add your handling code here:
+            JOptionPane.showInputDialog("Enter data to change");
+            
+            strContainer += "List is cleared.";
+            txtArea.setText(strContainer);
         }//GEN-LAST:event_btnInsertAfterActionPerformed
 
         private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
-                // TODO add your handling code here:
+            singlyList.clear();
+            strContainer += "List is cleared.";
+            txtArea.setText(strContainer);
         }//GEN-LAST:event_btnClearActionPerformed
 
         private void txtInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtInputActionPerformed
-                // TODO add your handling code here:
+            // TODO add your handling code here:
         }//GEN-LAST:event_txtInputActionPerformed
 
         private void InsertAtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InsertAtMouseClicked
-//        String SLL = txtInput.getText();
-//                if (SLL.isEmpty()) {
-//                        JOptionPane.showMessageDialog(this, "No Input.","Error",
-//                        JOptionPane.ERROR_MESSAGE);
-//                        return;
-//                        
-//                }
-//                try {
-//                        int element = Integer.parseInt(SLL);
-//                        if (InsertAt.getSelectedItem().equals("Insert at Beginning")) {
-//                                insertAtBeginning(element);
-//                                txtArea.append(SLL + " is Inserted at beginning.\n");
-//                                
-//                        }
-//                        else if(InsertAt.getSelectedItem().equals("Insert at End")){
-//                                insertAtEnd(element);
-//                                txtArea.append(SLL + " is Inserted at end.\n");
-//                        }
-//                } catch (Exception e) {
-//                }        
+
         }//GEN-LAST:event_InsertAtMouseClicked
 
-        public static void main(String args[]) {
-                /* Set the Nimbus look and feel */
-                //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-                /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-                 */
-                try {
-                        for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                                if ("Nimbus".equals(info.getName())) {
-                                        javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                                        break;
-                                }
-                        }
-                } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-                        logger.log(java.util.logging.Level.SEVERE, null, ex);
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
                 }
-                //</editor-fold>
-
-                /* Create and display the form */
-                java.awt.EventQueue.invokeLater(() -> new SinglyUI().setVisible(true));
+            }
+        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
+            logger.log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(() -> new SinglyUI().setVisible(true));
+    }
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
         private javax.swing.JComboBox<String> Delete;
