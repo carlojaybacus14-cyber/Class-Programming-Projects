@@ -10,14 +10,14 @@ import java.awt.Color;
  *
  * @author Jay Aguirre Alfeche
  */
-public class CircularLinkedList extends javax.swing.JFrame {
+public class ArrayListDemo extends javax.swing.JFrame {
         
-        private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CircularLinkedList.class.getName());
+        private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ArrayListDemo.class.getName());
 
         /**
          * Creates new form Array
          */
-        public CircularLinkedList() {
+        public ArrayListDemo() {
                 initComponents();
                 getContentPane().setBackground(new Color(23, 23, 23));
         }
@@ -37,17 +37,17 @@ public class CircularLinkedList extends javax.swing.JFrame {
         lblOutputText = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtAreaResult = new javax.swing.JTextArea();
-        btnInsert = new javax.swing.JButton();
-        btnTraverse = new javax.swing.JButton();
-        btnLength = new javax.swing.JButton();
-        btnDelete = new javax.swing.JButton();
+        btnAdd = new javax.swing.JButton();
+        btnPoll = new javax.swing.JButton();
+        btnPeek = new javax.swing.JButton();
+        btnClear = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Rajdhani", 1, 28)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(227, 197, 134));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("CIRCULAR LINKED LIST");
+        jLabel1.setText("ARRAYLIST");
 
         lblEnterData.setFont(new java.awt.Font("Rajdhani SemiBold", 1, 14)); // NOI18N
         lblEnterData.setForeground(new java.awt.Color(227, 197, 134));
@@ -71,30 +71,25 @@ public class CircularLinkedList extends javax.swing.JFrame {
         txtAreaResult.setRows(5);
         jScrollPane1.setViewportView(txtAreaResult);
 
-        btnInsert.setBackground(new java.awt.Color(38, 34, 15));
-        btnInsert.setFont(new java.awt.Font("Rajdhani", 1, 16)); // NOI18N
-        btnInsert.setForeground(new java.awt.Color(227, 197, 134));
-        btnInsert.setText("Insert");
-        btnInsert.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInsertActionPerformed(evt);
-            }
-        });
+        btnAdd.setBackground(new java.awt.Color(38, 34, 15));
+        btnAdd.setFont(new java.awt.Font("Rajdhani", 1, 16)); // NOI18N
+        btnAdd.setForeground(new java.awt.Color(227, 197, 134));
+        btnAdd.setText("Add");
 
-        btnTraverse.setBackground(new java.awt.Color(38, 34, 15));
-        btnTraverse.setFont(new java.awt.Font("Rajdhani", 1, 16)); // NOI18N
-        btnTraverse.setForeground(new java.awt.Color(227, 197, 134));
-        btnTraverse.setText("Traverse");
+        btnPoll.setBackground(new java.awt.Color(38, 34, 15));
+        btnPoll.setFont(new java.awt.Font("Rajdhani", 1, 16)); // NOI18N
+        btnPoll.setForeground(new java.awt.Color(227, 197, 134));
+        btnPoll.setText("Poll");
 
-        btnLength.setBackground(new java.awt.Color(38, 34, 15));
-        btnLength.setFont(new java.awt.Font("Rajdhani", 1, 16)); // NOI18N
-        btnLength.setForeground(new java.awt.Color(227, 197, 134));
-        btnLength.setText("Length");
+        btnPeek.setBackground(new java.awt.Color(38, 34, 15));
+        btnPeek.setFont(new java.awt.Font("Rajdhani", 1, 16)); // NOI18N
+        btnPeek.setForeground(new java.awt.Color(227, 197, 134));
+        btnPeek.setText("Peek");
 
-        btnDelete.setBackground(new java.awt.Color(38, 34, 15));
-        btnDelete.setFont(new java.awt.Font("Rajdhani", 1, 16)); // NOI18N
-        btnDelete.setForeground(new java.awt.Color(227, 197, 134));
-        btnDelete.setText("Delete");
+        btnClear.setBackground(new java.awt.Color(38, 34, 15));
+        btnClear.setFont(new java.awt.Font("Rajdhani", 1, 16)); // NOI18N
+        btnClear.setForeground(new java.awt.Color(227, 197, 134));
+        btnClear.setText("Clear");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -113,13 +108,13 @@ public class CircularLinkedList extends javax.swing.JFrame {
                         .addComponent(lblOutputText)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnTraverse, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnPoll, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnLength, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnPeek, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnDelete, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE)))
+                        .addComponent(btnClear, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -133,23 +128,19 @@ public class CircularLinkedList extends javax.swing.JFrame {
                     .addComponent(txtInputData, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnTraverse, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnLength, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPoll, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPeek, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(lblOutputText)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnInsertActionPerformed
 
         /**
          * @param args the command line arguments
@@ -173,14 +164,14 @@ public class CircularLinkedList extends javax.swing.JFrame {
                 //</editor-fold>
 
                 /* Create and display the form */
-                java.awt.EventQueue.invokeLater(() -> new CircularLinkedList().setVisible(true));
+                java.awt.EventQueue.invokeLater(() -> new ArrayListDemo().setVisible(true));
         }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnDelete;
-    private javax.swing.JButton btnInsert;
-    private javax.swing.JButton btnLength;
-    private javax.swing.JButton btnTraverse;
+    private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnClear;
+    private javax.swing.JButton btnPeek;
+    private javax.swing.JButton btnPoll;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblEnterData;

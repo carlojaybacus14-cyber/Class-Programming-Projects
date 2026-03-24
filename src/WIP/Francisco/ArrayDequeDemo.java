@@ -10,14 +10,14 @@ import java.awt.Color;
  *
  * @author Jay Aguirre Alfeche
  */
-public class ArrayDeque extends javax.swing.JFrame {
+public class ArrayDequeDemo extends javax.swing.JFrame {
         
-        private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ArrayDeque.class.getName());
+        private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ArrayDequeDemo.class.getName());
 
         /**
          * Creates new form Array
          */
-        public ArrayDeque() {
+        public ArrayDequeDemo() {
                 initComponents();
                 getContentPane().setBackground(new Color(23, 23, 23));
         }
@@ -164,7 +164,7 @@ public class ArrayDeque extends javax.swing.JFrame {
                 //</editor-fold>
 
                 /* Create and display the form */
-                java.awt.EventQueue.invokeLater(() -> new ArrayDeque().setVisible(true));
+                java.awt.EventQueue.invokeLater(() -> new ArrayDequeDemo().setVisible(true));
         }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
