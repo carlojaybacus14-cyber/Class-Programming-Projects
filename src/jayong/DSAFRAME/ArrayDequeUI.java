@@ -33,134 +33,136 @@ public class ArrayDequeUI extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
-        // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-        private void initComponents() {
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
 
-                jPanel1 = new javax.swing.JPanel();
-                jLabel1 = new javax.swing.JLabel();
-                lbltxt = new javax.swing.JLabel();
-                txtInput = new javax.swing.JTextField();
-                btnClear = new javax.swing.JButton();
-                jScrollPane1 = new javax.swing.JScrollPane();
-                txtArea = new javax.swing.JTextArea();
-                lbltxt2 = new javax.swing.JLabel();
-                Peek = new javax.swing.JComboBox<>();
-                Poll = new javax.swing.JComboBox<>();
-                jButton1 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        lbltxt = new javax.swing.JLabel();
+        txtInput = new javax.swing.JTextField();
+        btnClear = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtArea = new javax.swing.JTextArea();
+        lbltxt2 = new javax.swing.JLabel();
+        Peek = new javax.swing.JComboBox<>();
+        Poll = new javax.swing.JComboBox<>();
+        jButton1 = new javax.swing.JButton();
 
-                setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-                jLabel1.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
-                jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-                jLabel1.setText("ARRAY DEQUE DEMO");
-                jLabel1.setMaximumSize(new java.awt.Dimension(174, 22));
-                jLabel1.setMinimumSize(new java.awt.Dimension(174, 22));
-                jLabel1.setPreferredSize(new java.awt.Dimension(174, 22));
+        jLabel1.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("ARRAY DEQUE DEMO");
+        jLabel1.setMaximumSize(new java.awt.Dimension(174, 22));
+        jLabel1.setMinimumSize(new java.awt.Dimension(174, 22));
+        jLabel1.setPreferredSize(new java.awt.Dimension(174, 22));
 
-                lbltxt.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
-                lbltxt.setText("ENTER ELEMENT:");
-                lbltxt.setMaximumSize(new java.awt.Dimension(138, 18));
-                lbltxt.setMinimumSize(new java.awt.Dimension(138, 18));
-                lbltxt.setPreferredSize(new java.awt.Dimension(138, 18));
+        lbltxt.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        lbltxt.setText("ENTER ELEMENT:");
+        lbltxt.setMaximumSize(new java.awt.Dimension(138, 18));
+        lbltxt.setMinimumSize(new java.awt.Dimension(138, 18));
+        lbltxt.setPreferredSize(new java.awt.Dimension(138, 18));
 
-                txtInput.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
-                txtInput.setPreferredSize(new java.awt.Dimension(68, 26));
+        txtInput.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        txtInput.setPreferredSize(new java.awt.Dimension(68, 26));
 
-                btnClear.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
-                btnClear.setText("CLEAR");
-                btnClear.setMaximumSize(new java.awt.Dimension(76, 29));
-                btnClear.setMinimumSize(new java.awt.Dimension(76, 29));
-                btnClear.setPreferredSize(new java.awt.Dimension(76, 29));
-                btnClear.addActionListener(new java.awt.event.ActionListener() {
-                        public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                btnClearActionPerformed(evt);
-                        }
-                });
+        btnClear.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        btnClear.setText("CLEAR");
+        btnClear.setMaximumSize(new java.awt.Dimension(76, 29));
+        btnClear.setMinimumSize(new java.awt.Dimension(76, 29));
+        btnClear.setPreferredSize(new java.awt.Dimension(76, 29));
+        btnClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearActionPerformed(evt);
+            }
+        });
 
-                txtArea.setColumns(20);
-                txtArea.setRows(5);
-                jScrollPane1.setViewportView(txtArea);
+        txtArea.setEditable(false);
+        txtArea.setColumns(20);
+        txtArea.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtArea.setRows(5);
+        jScrollPane1.setViewportView(txtArea);
 
-                lbltxt2.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
-                lbltxt2.setText("OUTPUT:");
-                lbltxt2.setMaximumSize(new java.awt.Dimension(138, 18));
-                lbltxt2.setMinimumSize(new java.awt.Dimension(138, 18));
-                lbltxt2.setPreferredSize(new java.awt.Dimension(138, 18));
+        lbltxt2.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        lbltxt2.setText("OUTPUT:");
+        lbltxt2.setMaximumSize(new java.awt.Dimension(138, 18));
+        lbltxt2.setMinimumSize(new java.awt.Dimension(138, 18));
+        lbltxt2.setPreferredSize(new java.awt.Dimension(138, 18));
 
-                Peek.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
-                Peek.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PEEK FIRST", "PEEK LAST" }));
-                Peek.addActionListener(new java.awt.event.ActionListener() {
-                        public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                PeekActionPerformed(evt);
-                        }
-                });
+        Peek.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        Peek.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PEEK FIRST", "PEEK LAST" }));
+        Peek.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PeekActionPerformed(evt);
+            }
+        });
 
-                Poll.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
-                Poll.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "POLL FIRST", "POLL LAST" }));
-                Poll.addActionListener(new java.awt.event.ActionListener() {
-                        public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                PollActionPerformed(evt);
-                        }
-                });
+        Poll.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        Poll.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "POLL FIRST", "POLL LAST" }));
+        Poll.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PollActionPerformed(evt);
+            }
+        });
 
-                jButton1.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
-                jButton1.setText("OFFER");
-                jButton1.addActionListener(new java.awt.event.ActionListener() {
-                        public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                jButton1ActionPerformed(evt);
-                        }
-                });
+        jButton1.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        jButton1.setText("OFFER");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
-                javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-                jPanel1.setLayout(jPanel1Layout);
-                jPanel1Layout.setHorizontalGroup(
-                        jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(23, 23, 23)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(lbltxt2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(txtInput, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(lbltxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 354, Short.MAX_VALUE)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                        .addComponent(Peek, 0, 174, Short.MAX_VALUE)
-                                                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                        .addComponent(btnClear, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
-                                                        .addComponent(Poll, 0, 174, Short.MAX_VALUE))))
-                                .addContainerGap(23, Short.MAX_VALUE))
-                );
-                jPanel1Layout.setVerticalGroup(
-                        jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(23, 23, 23)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lbltxt, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtInput, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(btnClear, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-                                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(Peek, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-                                        .addComponent(Poll, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lbltxt2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(23, 23, 23))
-                );
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lbltxt2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtInput, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lbltxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 354, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Peek, 0, 174, Short.MAX_VALUE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnClear, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
+                            .addComponent(Poll, 0, 174, Short.MAX_VALUE))))
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lbltxt, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtInput, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnClear, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Peek, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
+                    .addComponent(Poll, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lbltxt2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23))
+        );
 
-                getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
+        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
-                pack();
-        }// </editor-fold>//GEN-END:initComponents
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
 
         private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
             AD.clear();
@@ -227,17 +229,17 @@ public class ArrayDequeUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new ArrayDequeUI().setVisible(true));
     }
-        // Variables declaration - do not modify//GEN-BEGIN:variables
-        private javax.swing.JComboBox<String> Peek;
-        private javax.swing.JComboBox<String> Poll;
-        private javax.swing.JButton btnClear;
-        private javax.swing.JButton jButton1;
-        private javax.swing.JLabel jLabel1;
-        private javax.swing.JPanel jPanel1;
-        private javax.swing.JScrollPane jScrollPane1;
-        private javax.swing.JLabel lbltxt;
-        private javax.swing.JLabel lbltxt2;
-        private javax.swing.JTextArea txtArea;
-        private javax.swing.JTextField txtInput;
-        // End of variables declaration//GEN-END:variables
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> Peek;
+    private javax.swing.JComboBox<String> Poll;
+    private javax.swing.JButton btnClear;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lbltxt;
+    private javax.swing.JLabel lbltxt2;
+    private javax.swing.JTextArea txtArea;
+    private javax.swing.JTextField txtInput;
+    // End of variables declaration//GEN-END:variables
 }

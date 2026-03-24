@@ -1,141 +1,304 @@
 package Jayong.DSAFRAME;
 
-/**
- *
- * @author Jay Aguirre Alfeche
- */
+import java.util.Arrays;
+import javax.swing.JOptionPane;
+
 public class ArrayUI extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ArrayUI.class.getName());
 
+    private String strContainer;
+
+    private int[] array;
+
     public ArrayUI() {
         initComponents();
+        array = new int[100];
     }
 
     @SuppressWarnings("unchecked")
-        // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-        private void initComponents() {
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
 
-                jLabel1 = new javax.swing.JLabel();
-                jLabel2 = new javax.swing.JLabel();
-                jTextField1 = new javax.swing.JTextField();
-                jButton1 = new javax.swing.JButton();
-                jButton2 = new javax.swing.JButton();
-                jButton3 = new javax.swing.JButton();
-                jButton4 = new javax.swing.JButton();
-                jScrollPane1 = new javax.swing.JScrollPane();
-                jTextArea1 = new javax.swing.JTextArea();
-                jLabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        txtInput = new javax.swing.JTextField();
+        btnAdd = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
+        btnInsert = new javax.swing.JButton();
+        btnDeleteAll = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtOutput = new javax.swing.JTextArea();
+        jLabel3 = new javax.swing.JLabel();
 
-                setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-                jLabel1.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
-                jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-                jLabel1.setText("ARRAY DEMO");
-                jLabel1.setMaximumSize(new java.awt.Dimension(174, 22));
-                jLabel1.setMinimumSize(new java.awt.Dimension(174, 22));
-                jLabel1.setPreferredSize(new java.awt.Dimension(174, 22));
+        jLabel1.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("ARRAY DEMO");
+        jLabel1.setMaximumSize(new java.awt.Dimension(174, 22));
+        jLabel1.setMinimumSize(new java.awt.Dimension(174, 22));
+        jLabel1.setPreferredSize(new java.awt.Dimension(174, 22));
 
-                jLabel2.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
-                jLabel2.setText("ENTER ELEMENT:");
-                jLabel2.setMaximumSize(new java.awt.Dimension(138, 18));
-                jLabel2.setMinimumSize(new java.awt.Dimension(138, 18));
-                jLabel2.setPreferredSize(new java.awt.Dimension(138, 18));
+        jLabel2.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        jLabel2.setText("ENTER ELEMENT:");
+        jLabel2.setMaximumSize(new java.awt.Dimension(138, 18));
+        jLabel2.setMinimumSize(new java.awt.Dimension(138, 18));
+        jLabel2.setPreferredSize(new java.awt.Dimension(138, 18));
 
-                jTextField1.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
-                jTextField1.setPreferredSize(new java.awt.Dimension(68, 26));
+        txtInput.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        txtInput.setPreferredSize(new java.awt.Dimension(68, 26));
 
-                jButton1.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
-                jButton1.setMaximumSize(new java.awt.Dimension(76, 29));
-                jButton1.setMinimumSize(new java.awt.Dimension(76, 29));
-                jButton1.setPreferredSize(new java.awt.Dimension(76, 29));
+        btnAdd.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        btnAdd.setText("ADD");
+        btnAdd.setMaximumSize(new java.awt.Dimension(76, 29));
+        btnAdd.setMinimumSize(new java.awt.Dimension(76, 29));
+        btnAdd.setPreferredSize(new java.awt.Dimension(76, 29));
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddActionPerformed(evt);
+            }
+        });
 
-                jButton2.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
-                jButton2.setMaximumSize(new java.awt.Dimension(76, 29));
-                jButton2.setMinimumSize(new java.awt.Dimension(76, 29));
-                jButton2.setPreferredSize(new java.awt.Dimension(766, 29));
+        btnDelete.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        btnDelete.setText("DELETE");
+        btnDelete.setMaximumSize(new java.awt.Dimension(76, 29));
+        btnDelete.setMinimumSize(new java.awt.Dimension(76, 29));
+        btnDelete.setPreferredSize(new java.awt.Dimension(766, 29));
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
 
-                jButton3.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
-                jButton3.setMaximumSize(new java.awt.Dimension(76, 29));
-                jButton3.setMinimumSize(new java.awt.Dimension(76, 29));
-                jButton3.setPreferredSize(new java.awt.Dimension(76, 29));
-                jButton3.addActionListener(new java.awt.event.ActionListener() {
-                        public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                jButton3ActionPerformed(evt);
-                        }
-                });
+        btnInsert.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        btnInsert.setText("INSERT");
+        btnInsert.setMaximumSize(new java.awt.Dimension(76, 29));
+        btnInsert.setMinimumSize(new java.awt.Dimension(76, 29));
+        btnInsert.setPreferredSize(new java.awt.Dimension(76, 29));
+        btnInsert.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInsertActionPerformed(evt);
+            }
+        });
 
-                jButton4.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
-                jButton4.setMaximumSize(new java.awt.Dimension(76, 29));
-                jButton4.setMinimumSize(new java.awt.Dimension(76, 29));
-                jButton4.setPreferredSize(new java.awt.Dimension(76, 29));
+        btnDeleteAll.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        btnDeleteAll.setText("DELETE ALL");
+        btnDeleteAll.setMaximumSize(new java.awt.Dimension(76, 29));
+        btnDeleteAll.setMinimumSize(new java.awt.Dimension(76, 29));
+        btnDeleteAll.setPreferredSize(new java.awt.Dimension(76, 29));
+        btnDeleteAll.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteAllActionPerformed(evt);
+            }
+        });
 
-                jTextArea1.setColumns(20);
-                jTextArea1.setRows(5);
-                jScrollPane1.setViewportView(jTextArea1);
+        txtOutput.setEditable(false);
+        txtOutput.setColumns(20);
+        txtOutput.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        txtOutput.setRows(5);
+        jScrollPane1.setViewportView(txtOutput);
 
-                jLabel3.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
-                jLabel3.setText("OUTPUT:");
-                jLabel3.setMaximumSize(new java.awt.Dimension(138, 18));
-                jLabel3.setMinimumSize(new java.awt.Dimension(138, 18));
-                jLabel3.setPreferredSize(new java.awt.Dimension(138, 18));
+        jLabel3.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        jLabel3.setText("OUTPUT:");
+        jLabel3.setMaximumSize(new java.awt.Dimension(138, 18));
+        jLabel3.setMinimumSize(new java.awt.Dimension(138, 18));
+        jLabel3.setPreferredSize(new java.awt.Dimension(138, 18));
 
-                javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-                getContentPane().setLayout(layout);
-                layout.setHorizontalGroup(
-                        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(23, 23, 23)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jScrollPane1)
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 354, Short.MAX_VALUE)
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(23, 23, 23))
-                );
-                layout.setVerticalGroup(
-                        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addGap(23, 23, 23)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-                                        .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(23, Short.MAX_VALUE))
-                );
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnDeleteAll, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 354, Short.MAX_VALUE)
+                    .addComponent(txtInput, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(23, 23, 23))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtInput, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnInsert, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
+                    .addComponent(btnDeleteAll, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23))
+        );
 
-                pack();
-        }// </editor-fold>//GEN-END:initComponents
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
 
-        private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-            // TODO add your handling code here:
-        }//GEN-LAST:event_jButton3ActionPerformed
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        String str = txtInput.getText();
 
-    /**
-     * @param args the command line arguments
-     */
+        if (str.isBlank()) {
+            JOptionPane.showMessageDialog(this, "Enter a data");
+            return;
+        }
+
+        int data;
+
+        try {
+            data = Integer.parseInt(str);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid input");
+            return;
+        }
+
+        int[] newArray = new int[array.length];
+
+        for (int i = 0; i < array.length; i++) {
+            newArray[i] = array[i];
+        }
+
+        array = new int[array.length + 1];
+
+        for (int i = 0; i < newArray.length; i++) {
+            array[i] = newArray[i];
+        }
+
+        array[newArray.length] = data;
+
+        strContainer += Arrays.toString(array) + "\n";
+        txtOutput.setText(strContainer);
+    }//GEN-LAST:event_btnAddActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        if (array.length == 0) {
+            JOptionPane.showMessageDialog(this, "Array is empty");
+            return;
+        }
+        
+        String str = txtInput.getText();
+        
+        if (str.isBlank()) {
+            JOptionPane.showMessageDialog(this, "Enter an index");
+            return;
+        }
+        
+        int index;
+        
+        try {
+            index = Integer.parseInt(str);
+            
+            if (index < 0 || index >= array.length) {
+                JOptionPane.showMessageDialog(this, "Index out of bounds");
+                return;
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid input");
+            return;
+        }
+        
+        int[] newArray = new int[array.length - 1];
+        
+        for (int i = 0; i < index; i++) {
+            newArray[i] = array[i];
+        }
+        
+        for (int i = index; i < newArray.length; i++) {
+            newArray[i] = array[i + 1];
+        }
+        
+        array = new int[newArray.length];
+        
+        for (int i = 0; i < newArray.length; i++) {
+            array[i] = newArray[i];
+        }
+        
+        strContainer += Arrays.toString(array) + "\n";
+        txtOutput.setText(strContainer);
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void btnInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertActionPerformed
+        if (array.length == 0) {
+            JOptionPane.showMessageDialog(this, "Array is empty");
+            return;
+        }
+        
+        String str = txtInput.getText();
+        
+        if (str.isBlank()) {
+            JOptionPane.showMessageDialog(this, "Enter a data");
+            return;
+        }
+        
+        int data, index;
+        
+        try {
+            data = Integer.parseInt(str);
+            
+            str = JOptionPane.showInputDialog(data + " insert at index:");
+            
+            if (str == null) {
+                return;
+            }
+            
+            index = Integer.parseInt(str);
+            
+            if (index < 0 || index >= array.length) {
+                JOptionPane.showMessageDialog(this, "Index out of bounds");
+                return;
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid input");
+            return;
+        }
+        
+        int[] newArray = new int[array.length + 1];
+        
+        for (int i = 0; i < index; i++) {
+            newArray[i] = array[i];
+        }
+        
+        newArray[index] = data;
+        
+        for (int i = index + 1; i < newArray.length; i++) {
+            newArray[i] = array[i - 1];
+        }
+        
+        array = new int[newArray.length];
+        
+        for (int i = 0; i < array.length; i++) {
+            array[i] = newArray[i];
+        }
+        
+        strContainer += Arrays.toString(array) + "\n";
+        txtOutput.setText(strContainer);
+    }//GEN-LAST:event_btnInsertActionPerformed
+
+    private void btnDeleteAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteAllActionPerformed
+        array = new int[0];
+        strContainer += "Array cleared\n";
+        txtOutput.setText(strContainer);
+    }//GEN-LAST:event_btnDeleteAllActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -158,16 +321,16 @@ public class ArrayUI extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(() -> new ArrayUI().setVisible(true));
     }
 
-        // Variables declaration - do not modify//GEN-BEGIN:variables
-        private javax.swing.JButton jButton1;
-        private javax.swing.JButton jButton2;
-        private javax.swing.JButton jButton3;
-        private javax.swing.JButton jButton4;
-        private javax.swing.JLabel jLabel1;
-        private javax.swing.JLabel jLabel2;
-        private javax.swing.JLabel jLabel3;
-        private javax.swing.JScrollPane jScrollPane1;
-        private javax.swing.JTextArea jTextArea1;
-        private javax.swing.JTextField jTextField1;
-        // End of variables declaration//GEN-END:variables
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnDeleteAll;
+    private javax.swing.JButton btnInsert;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField txtInput;
+    private javax.swing.JTextArea txtOutput;
+    // End of variables declaration//GEN-END:variables
 }
