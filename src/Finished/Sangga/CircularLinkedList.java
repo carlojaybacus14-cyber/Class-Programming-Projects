@@ -1,4 +1,4 @@
-package WIP.Sangga;
+package Finished.Sangga;
 
 public class CircularLinkedList {
 
@@ -29,15 +29,15 @@ public class CircularLinkedList {
             return "List is empty";
         }
 
-        String output = "";
+        String txtContainer = "";
         Node current = head;
 
-        do { 
-            output += current.data + " -> ";
+        do {
+            txtContainer += current.data + " -> ";
             current = current.next;
-        } while (current.next != head);
+        } while (current != head);
 
-        return output += current.data + "head";
+        return txtContainer + "head";
     }
 
     // --- INSERT AT BEGINNING ---
@@ -103,9 +103,9 @@ public class CircularLinkedList {
     }
 
     // --- DELETE ---
-    public void delete(int data) {
+    public boolean delete(int data) {
         if (head == null) {
-            return;
+            return false;
         }
 
         Node current = head;
@@ -129,13 +129,14 @@ public class CircularLinkedList {
                     }
                 }
                 size--;
-                return;
+                return true;
             }
             previous = current;
             current = current.next;
         } while (current != head);
 
         System.out.println(data + " not fount in the list.");
+        return false;
     }
 
     // --- DELETE AT ---

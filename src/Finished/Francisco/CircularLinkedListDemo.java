@@ -282,15 +282,15 @@ class CircularLinkedList {
             return "List is empty";
         }
 
-        String output = "";
+        String txtContainer = "";
         Node current = head;
 
         do {
-            output += current.data + " -> ";
+            txtContainer += current.data + " -> ";
             current = current.next;
-        } while (current.next != head);
+        } while (current != head);
 
-        return output + (current.data + " -> head");
+        return txtContainer + "head";
     }
 
     // --- INSERT AT BEGINNING ---
