@@ -1,23 +1,24 @@
-
-package WIP.Francisco;
+package Finished.Francisco;
 
 import java.awt.Color;
-import java.util.Arrays;
+import java.util.ArrayDeque;
 import javax.swing.JOptionPane;
 
-public class ArrayDemo extends javax.swing.JFrame {
+public class ArrayDequeDemo extends javax.swing.JFrame {
 
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ArrayDemo.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ArrayDequeDemo.class.getName());
 
-    private String texts = "";
+    private String txtContainer = "";
     
-    private int[] array;
-
-    public ArrayDemo() {
+    private final ArrayDeque<Integer> arrayDeque;
+    
+    public ArrayDequeDemo() {
         initComponents();
         getContentPane().setBackground(new Color(23, 23, 23));
-        array = new int[0];
+        arrayDeque = new ArrayDeque<>();
     }
+    
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -28,10 +29,10 @@ public class ArrayDemo extends javax.swing.JFrame {
         txtInputData = new javax.swing.JTextField();
         lblOutputText = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        txtAreaOutput = new javax.swing.JTextArea();
-        btnAdd = new javax.swing.JButton();
-        btnRemove = new javax.swing.JButton();
-        btnInsert = new javax.swing.JButton();
+        txtAreaResult = new javax.swing.JTextArea();
+        btnOffer = new javax.swing.JButton();
+        btnPoll = new javax.swing.JButton();
+        btnPeek = new javax.swing.JButton();
         btnClear = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -39,7 +40,7 @@ public class ArrayDemo extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Rajdhani", 1, 28)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(227, 197, 134));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("ARRAY");
+        jLabel1.setText("ARRAY DEQUE");
 
         lblEnterData.setFont(new java.awt.Font("Rajdhani SemiBold", 1, 14)); // NOI18N
         lblEnterData.setForeground(new java.awt.Color(227, 197, 134));
@@ -56,40 +57,40 @@ public class ArrayDemo extends javax.swing.JFrame {
         lblOutputText.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblOutputText.setText("Output:");
 
-        txtAreaOutput.setBackground(new java.awt.Color(31, 30, 26));
-        txtAreaOutput.setColumns(20);
-        txtAreaOutput.setFont(new java.awt.Font("JetBrains Mono NL", 1, 14)); // NOI18N
-        txtAreaOutput.setForeground(new java.awt.Color(227, 197, 134));
-        txtAreaOutput.setRows(5);
-        jScrollPane1.setViewportView(txtAreaOutput);
+        txtAreaResult.setBackground(new java.awt.Color(31, 30, 26));
+        txtAreaResult.setColumns(20);
+        txtAreaResult.setFont(new java.awt.Font("JetBrains Mono NL", 1, 14)); // NOI18N
+        txtAreaResult.setForeground(new java.awt.Color(227, 197, 134));
+        txtAreaResult.setRows(5);
+        jScrollPane1.setViewportView(txtAreaResult);
 
-        btnAdd.setBackground(new java.awt.Color(38, 34, 15));
-        btnAdd.setFont(new java.awt.Font("Rajdhani", 1, 16)); // NOI18N
-        btnAdd.setForeground(new java.awt.Color(227, 197, 134));
-        btnAdd.setText("Add");
-        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+        btnOffer.setBackground(new java.awt.Color(38, 34, 15));
+        btnOffer.setFont(new java.awt.Font("Rajdhani", 1, 16)); // NOI18N
+        btnOffer.setForeground(new java.awt.Color(227, 197, 134));
+        btnOffer.setText("Offer");
+        btnOffer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddActionPerformed(evt);
+                btnOfferActionPerformed(evt);
             }
         });
 
-        btnRemove.setBackground(new java.awt.Color(38, 34, 15));
-        btnRemove.setFont(new java.awt.Font("Rajdhani", 1, 16)); // NOI18N
-        btnRemove.setForeground(new java.awt.Color(227, 197, 134));
-        btnRemove.setText("Remove");
-        btnRemove.addActionListener(new java.awt.event.ActionListener() {
+        btnPoll.setBackground(new java.awt.Color(38, 34, 15));
+        btnPoll.setFont(new java.awt.Font("Rajdhani", 1, 16)); // NOI18N
+        btnPoll.setForeground(new java.awt.Color(227, 197, 134));
+        btnPoll.setText("Poll");
+        btnPoll.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRemoveActionPerformed(evt);
+                btnPollActionPerformed(evt);
             }
         });
 
-        btnInsert.setBackground(new java.awt.Color(38, 34, 15));
-        btnInsert.setFont(new java.awt.Font("Rajdhani", 1, 16)); // NOI18N
-        btnInsert.setForeground(new java.awt.Color(227, 197, 134));
-        btnInsert.setText("Insert");
-        btnInsert.addActionListener(new java.awt.event.ActionListener() {
+        btnPeek.setBackground(new java.awt.Color(38, 34, 15));
+        btnPeek.setFont(new java.awt.Font("Rajdhani", 1, 16)); // NOI18N
+        btnPeek.setForeground(new java.awt.Color(227, 197, 134));
+        btnPeek.setText("Peek");
+        btnPeek.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInsertActionPerformed(evt);
+                btnPeekActionPerformed(evt);
             }
         });
 
@@ -113,11 +114,11 @@ public class ArrayDemo extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnOffer, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnRemove)
-                        .addGap(13, 13, 13)
-                        .addComponent(btnInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnPoll, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnPeek, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnClear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
@@ -141,9 +142,9 @@ public class ArrayDemo extends javax.swing.JFrame {
                     .addComponent(txtInputData, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRemove, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnOffer, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPoll, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPeek, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(lblOutputText)
@@ -156,11 +157,12 @@ public class ArrayDemo extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+    private void btnOfferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOfferActionPerformed
+        
         String str = txtInputData.getText();
         
         if (str.isBlank()) {
-            JOptionPane.showMessageDialog(this, "Enter a data");
+            JOptionPane.showMessageDialog(this, "Please enter something");
             return;
         }
         
@@ -173,141 +175,43 @@ public class ArrayDemo extends javax.swing.JFrame {
             return;
         }
         
-        // Process of adding data in an array
-        int[] newArray = new int[array.length];
-        
-        for (int i = 0; i < array.length; i++) {
-            newArray[i] = array[i];
-        }
-        
-        array = new int[array.length + 1];
-        
-        for (int i = 0; i < newArray.length; i++) {
-            array[i] = newArray[i];
-        }
-        
-        array[newArray.length] = data;
-        // Ends here
+        arrayDeque.offer(data);
         
         txtInputData.setText("");
-        texts += Arrays.toString(array) + "\n";
-        txtAreaOutput.setText(texts);
-    }//GEN-LAST:event_btnAddActionPerformed
+        txtContainer += arrayDeque + "\n";
+        txtAreaResult.setText(txtContainer);
+    }//GEN-LAST:event_btnOfferActionPerformed
 
-    private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
-        if (array.length == 0) {
-            JOptionPane.showMessageDialog(this, "Array is empty");
+    private void btnPollActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPollActionPerformed
+        
+        if (arrayDeque.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Deque is empty");
             return;
         }
         
-        String str = txtInputData.getText();
+        arrayDeque.poll();
         
-        if (str.isBlank()) {
-            JOptionPane.showMessageDialog(this, "Enter an index");
-            return;
-        }
-        
-        int index;
-        
-        try {
-            index = Integer.parseInt(str);
-            
-            if (index < 0 || index >= array.length) {
-                JOptionPane.showMessageDialog(this, "Index out of bounds");
-                return;
-            }
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Invalid input");
-            return;
-        }
-        
-        // Process of removing/deleting data in an array
-        int[] newArray = new int[array.length - 1];
-        
-        for (int i = 0; i < index; i++) {
-            newArray[i] = array[i];
-        }
-        
-        for (int i = index; i < newArray.length; i++) {
-            newArray[i] = array[i + 1];
-        }
-        
-        array = new int[newArray.length];
-        
-        for (int i = 0; i < newArray.length; i++) {
-            array[i] = newArray[i];
-        }
-        // Ends here
-        
-        txtInputData.setText("");
-        texts += Arrays.toString(array) + "\n";
-        txtAreaOutput.setText(texts);
-    }//GEN-LAST:event_btnRemoveActionPerformed
+        txtContainer += arrayDeque + "\n";
+        txtAreaResult.setText(txtContainer);
+    }//GEN-LAST:event_btnPollActionPerformed
 
-    private void btnInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertActionPerformed
-        if (array.length == 0) {
-            JOptionPane.showMessageDialog(this, "Array is empty");
+    private void btnPeekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPeekActionPerformed
+        
+        if (arrayDeque.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Deque is empty");
             return;
         }
         
-        String str = txtInputData.getText();
-        
-        if (str.isBlank()) {
-            JOptionPane.showMessageDialog(this, "Enter a data");
-            return;
-        }
-        
-        int data, index;
-        
-        try {
-            data = Integer.parseInt(str);
-            
-            str = JOptionPane.showInputDialog("Insert " + data + " at index:");
-            
-            if (str == null) {
-                return;
-            }
-            
-            index = Integer.parseInt(str);
-            
-            if (index < 0 || index >= array.length) {
-                JOptionPane.showMessageDialog(this, "Index out of bounds");
-                return;
-            }
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Invalid input");
-            return;
-        }
-        
-        // Process of inserting data in an array
-        int[] newArray = new int[array.length + 1];
-        
-        for (int i = 0; i < index; i++) {
-            newArray[i] = array[i];
-        }
-        
-        newArray[index] = data;
-        
-        for (int i = index + 1; i < newArray.length; i++) {
-            newArray[i] = array[i - 1];
-        }
-        
-        array = new int[newArray.length];
-        
-        for (int i = 0; i < array.length; i++) {
-            array[i] = newArray[i];
-        }
-        // Ends here
-        
-        txtInputData.setText("");
-        texts += Arrays.toString(array) + "\n";
-        txtAreaOutput.setText(texts);
-    }//GEN-LAST:event_btnInsertActionPerformed
+        txtContainer += "Top Element: " + arrayDeque.peek() + "\n";
+        txtAreaResult.setText(txtContainer);
+    }//GEN-LAST:event_btnPeekActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
-        array = new int[0];
-        texts += "Array cleared\n";
-        txtAreaOutput.setText(texts);
+        
+        arrayDeque.clear();
+        
+        txtContainer += "Deque cleared\n";
+        txtAreaResult.setText(txtContainer);
     }//GEN-LAST:event_btnClearActionPerformed
 
     public static void main(String args[]) {
@@ -329,19 +233,19 @@ public class ArrayDemo extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new ArrayDemo().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new ArrayDequeDemo().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnClear;
-    private javax.swing.JButton btnInsert;
-    private javax.swing.JButton btnRemove;
+    private javax.swing.JButton btnOffer;
+    private javax.swing.JButton btnPeek;
+    private javax.swing.JButton btnPoll;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblEnterData;
     private javax.swing.JLabel lblOutputText;
-    private javax.swing.JTextArea txtAreaOutput;
+    private javax.swing.JTextArea txtAreaResult;
     private javax.swing.JTextField txtInputData;
     // End of variables declaration//GEN-END:variables
 }
