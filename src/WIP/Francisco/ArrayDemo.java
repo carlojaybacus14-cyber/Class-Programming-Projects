@@ -153,6 +153,7 @@ public class ArrayDemo extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
@@ -188,6 +189,7 @@ public class ArrayDemo extends javax.swing.JFrame {
         array[newArray.length] = data;
         // Ends here
         
+        txtInputData.setText("");
         texts += Arrays.toString(array) + "\n";
         txtAreaOutput.setText(texts);
     }//GEN-LAST:event_btnAddActionPerformed
@@ -237,6 +239,7 @@ public class ArrayDemo extends javax.swing.JFrame {
         }
         // Ends here
         
+        txtInputData.setText("");
         texts += Arrays.toString(array) + "\n";
         txtAreaOutput.setText(texts);
     }//GEN-LAST:event_btnRemoveActionPerformed
@@ -296,6 +299,7 @@ public class ArrayDemo extends javax.swing.JFrame {
         }
         // Ends here
         
+        txtInputData.setText("");
         texts += Arrays.toString(array) + "\n";
         txtAreaOutput.setText(texts);
     }//GEN-LAST:event_btnInsertActionPerformed

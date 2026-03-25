@@ -178,9 +178,18 @@ public class CicularLinkedListUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLengthActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        
+        String txt = txtInput.getText();
+        
+        if (txt.isBlank()) {
+            JOptionPane.showMessageDialog(this, "Please enter something");
+            return;
+        }
+            
         int data;
+        
         try {
-            data = Integer.parseInt(txtInput.getText());
+            data = Integer.parseInt(txt);
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Invalid input.");
             return;

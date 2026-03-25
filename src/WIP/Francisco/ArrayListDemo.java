@@ -1,14 +1,22 @@
 package WIP.Francisco;
 
+
 import java.awt.Color;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class ArrayListDemo extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ArrayListDemo.class.getName());
 
+    private String txtContainer = "";
+    
+    private final ArrayList<Integer> arrayList;
+    
     public ArrayListDemo() {
         initComponents();
         getContentPane().setBackground(new Color(23, 23, 23));
+        arrayList = new ArrayList<>();
     }
 
     @SuppressWarnings("unchecked")
@@ -22,8 +30,8 @@ public class ArrayListDemo extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         txtAreaResult = new javax.swing.JTextArea();
         btnAdd = new javax.swing.JButton();
-        btnPoll = new javax.swing.JButton();
-        btnPeek = new javax.swing.JButton();
+        btnChange = new javax.swing.JButton();
+        btnRemove = new javax.swing.JButton();
         btnClear = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -65,23 +73,23 @@ public class ArrayListDemo extends javax.swing.JFrame {
             }
         });
 
-        btnPoll.setBackground(new java.awt.Color(38, 34, 15));
-        btnPoll.setFont(new java.awt.Font("Rajdhani", 1, 16)); // NOI18N
-        btnPoll.setForeground(new java.awt.Color(227, 197, 134));
-        btnPoll.setText("Poll");
-        btnPoll.addActionListener(new java.awt.event.ActionListener() {
+        btnChange.setBackground(new java.awt.Color(38, 34, 15));
+        btnChange.setFont(new java.awt.Font("Rajdhani", 1, 16)); // NOI18N
+        btnChange.setForeground(new java.awt.Color(227, 197, 134));
+        btnChange.setText("Change");
+        btnChange.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPollActionPerformed(evt);
+                btnChangeActionPerformed(evt);
             }
         });
 
-        btnPeek.setBackground(new java.awt.Color(38, 34, 15));
-        btnPeek.setFont(new java.awt.Font("Rajdhani", 1, 16)); // NOI18N
-        btnPeek.setForeground(new java.awt.Color(227, 197, 134));
-        btnPeek.setText("Peek");
-        btnPeek.addActionListener(new java.awt.event.ActionListener() {
+        btnRemove.setBackground(new java.awt.Color(38, 34, 15));
+        btnRemove.setFont(new java.awt.Font("Rajdhani", 1, 16)); // NOI18N
+        btnRemove.setForeground(new java.awt.Color(227, 197, 134));
+        btnRemove.setText("Remove");
+        btnRemove.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPeekActionPerformed(evt);
+                btnRemoveActionPerformed(evt);
             }
         });
 
@@ -106,18 +114,17 @@ public class ArrayListDemo extends javax.swing.JFrame {
                     .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnPoll, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnPeek, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnChange, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(19, 19, 19)
+                        .addComponent(btnRemove)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnClear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lblOutputText)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(lblEnterData, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtInputData, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(lblOutputText)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblEnterData, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtInputData, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -132,8 +139,8 @@ public class ArrayListDemo extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnPoll, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnPeek, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnChange, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRemove, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(lblOutputText)
@@ -143,22 +150,107 @@ public class ArrayListDemo extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
-        
+        String txt = txtInputData.getText();
+
+        if (txt.isBlank()) {
+            JOptionPane.showMessageDialog(this, "Please enter a data.");
+            return;
+        }
+
+        int data;
+
+        try {
+            data = Integer.parseInt(txt);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid input.");
+            return;
+        }
+
+        arrayList.add(data);
+
+        txtContainer += arrayList + "\n";
+        txtInputData.setText("");
+
+        txtAreaResult.setText(txtContainer);
     }//GEN-LAST:event_btnAddActionPerformed
 
-    private void btnPollActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPollActionPerformed
-        
-    }//GEN-LAST:event_btnPollActionPerformed
+    private void btnChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChangeActionPerformed
+        String txt = txtInputData.getText();
 
-    private void btnPeekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPeekActionPerformed
+        if (txt.isBlank()) {
+            JOptionPane.showMessageDialog(this, "Please enter a data to change.");
+            return;
+        }
+
+        if (arrayList.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "List is empty.");
+            return;
+        }
+
+        int data, index;
         
-    }//GEN-LAST:event_btnPeekActionPerformed
+        try {
+            data = Integer.parseInt(txt);
+            index = Integer.parseInt(JOptionPane.showInputDialog("Enter an index."));
+            
+            if (index < 0 || index >= arrayList.size()) {
+                JOptionPane.showMessageDialog(this, "Index out of bounds");
+                return;
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid input.");
+            return;
+        }
+        
+        arrayList.set(index, data);
+        
+        txtContainer += arrayList + "\n";
+        txtInputData.setText("");
+        
+        txtAreaResult.setText(txtContainer);
+    }//GEN-LAST:event_btnChangeActionPerformed
+
+    private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
+        String txt = txtInputData.getText();
+
+        if (txt.isBlank()) {
+            JOptionPane.showMessageDialog(this, "Please enter an index.");
+            return;
+        }
+
+        if (arrayList.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "List is empty.");
+            return;
+        }
+
+        int index;
+
+        try {
+            index = Integer.parseInt(txt);
+            
+            if (index < 0 || index >= arrayList.size()) {
+                JOptionPane.showMessageDialog(this, "Index out of bounds.");
+                return;
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid input.");
+            return;
+        }
+
+        arrayList.remove(index);
+        
+        txtContainer += arrayList + "\n";
+        txtAreaResult.setText(txtContainer);
+    }//GEN-LAST:event_btnRemoveActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
-        
+        arrayList.clear();
+        txtContainer += "List cleared.";
+        txtAreaResult.setText(txtContainer);
     }//GEN-LAST:event_btnClearActionPerformed
 
     public static void main(String args[]) {
@@ -185,9 +277,9 @@ public class ArrayListDemo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnChange;
     private javax.swing.JButton btnClear;
-    private javax.swing.JButton btnPeek;
-    private javax.swing.JButton btnPoll;
+    private javax.swing.JButton btnRemove;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblEnterData;

@@ -10,7 +10,7 @@ public class ArrayDequeDemo extends javax.swing.JFrame {
 
     private String txtContainer = "";
     
-    private ArrayDeque<Integer> arrayDeque;
+    private final ArrayDeque<Integer> arrayDeque;
     
     public ArrayDequeDemo() {
         initComponents();
@@ -154,6 +154,7 @@ public class ArrayDequeDemo extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnOfferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOfferActionPerformed
@@ -176,6 +177,7 @@ public class ArrayDequeDemo extends javax.swing.JFrame {
         
         arrayDeque.offer(data);
         
+        txtInputData.setText("");
         txtContainer += arrayDeque + "\n";
         txtAreaResult.setText(txtContainer);
     }//GEN-LAST:event_btnOfferActionPerformed
