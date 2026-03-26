@@ -39,7 +39,7 @@ public class DoublyLinkedList {
             current = current.next;
         }
         
-        return strContainer += current.data + " <-> null\n";
+        return strContainer += current.data + " <-> null";
     }
 
     // --- DISPLAY FORWARD ---
@@ -139,11 +139,11 @@ public class DoublyLinkedList {
     }
     
     // --- DELETE DATA ---
-    public void deleteData(int data) {
+    public boolean deleteData(int data) {
         Node current = head;
         
         if (head == null) {
-            return;
+            return false;
         }
         
         if (head.data == data) {
@@ -154,7 +154,7 @@ public class DoublyLinkedList {
                 tail = null;
             }
             size--;
-            return;
+            return true;
         }
         
         while (current != null) {
@@ -167,11 +167,13 @@ public class DoublyLinkedList {
                     current.next.prev = current.prev;
                 }
                 size--;
-                return;
+                return true;
             }
             current = current.next;
         }
+        
         System.out.println(data + " not found in the list.");
+        return false;
     }
     
     // --- DELETE AT INDEX ---

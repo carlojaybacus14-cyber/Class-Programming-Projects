@@ -166,12 +166,18 @@ public class DoublyLinkedListDemo extends javax.swing.JFrame {
             return;
         }
 
-        try {
-            int data = Integer.parseInt(str);
-            doublyList.deleteData(data);
+        int data;
 
+        try {
+            data = Integer.parseInt(str);
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Invalid input");
+            return;
+        }
+
+        if (!doublyList.deleteData(data)) {
+            JOptionPane.showMessageDialog(this, data + " is not found in the list");
+            return;
         }
 
         textContainer += doublyList.printList() + "\n";

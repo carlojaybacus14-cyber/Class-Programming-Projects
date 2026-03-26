@@ -170,6 +170,7 @@ public class ArrayUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        
         String str = txtInput.getText();
         
         if (str.isBlank()) {
@@ -258,6 +259,7 @@ public class ArrayUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertActionPerformed
+        
         if (array.length == 0) {
             JOptionPane.showMessageDialog(this, "Array is empty");
             return;
