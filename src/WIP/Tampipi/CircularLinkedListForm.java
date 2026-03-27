@@ -4,6 +4,8 @@
  */
 package WIP.Tampipi;
 
+import java.awt.Color;
+
 public class CircularLinkedListForm extends javax.swing.JFrame {
         
         private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CircularLinkedListForm.class.getName());
@@ -13,6 +15,7 @@ public class CircularLinkedListForm extends javax.swing.JFrame {
          */
         public CircularLinkedListForm() {
                 initComponents();
+                getContentPane().setBackground(new Color(255, 209, 220));
         }
 
         /**
@@ -24,17 +27,98 @@ public class CircularLinkedListForm extends javax.swing.JFrame {
         // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
         private void initComponents() {
 
+                jLabel1 = new javax.swing.JLabel();
+                jButton1 = new javax.swing.JButton();
+                jButton2 = new javax.swing.JButton();
+                jButton3 = new javax.swing.JButton();
+                jButton4 = new javax.swing.JButton();
+                jScrollPane1 = new javax.swing.JScrollPane();
+                jTextArea1 = new javax.swing.JTextArea();
+                jLabel2 = new javax.swing.JLabel();
+                jTextField1 = new javax.swing.JTextField();
+
                 setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+                jLabel1.setFont(new java.awt.Font("Felix Titling", 1, 26)); // NOI18N
+                jLabel1.setForeground(new java.awt.Color(122, 32, 64));
+                jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                jLabel1.setText("circular linked list");
+
+                jButton1.setBackground(new java.awt.Color(255, 240, 245));
+                jButton1.setFont(new java.awt.Font("Felix Titling", 1, 15)); // NOI18N
+                jButton1.setForeground(new java.awt.Color(122, 32, 64));
+                jButton1.setText("insert");
+
+                jButton2.setBackground(new java.awt.Color(255, 240, 245));
+                jButton2.setFont(new java.awt.Font("Felix Titling", 1, 15)); // NOI18N
+                jButton2.setForeground(new java.awt.Color(122, 32, 64));
+                jButton2.setText("length");
+
+                jButton3.setBackground(new java.awt.Color(255, 240, 245));
+                jButton3.setFont(new java.awt.Font("Felix Titling", 1, 15)); // NOI18N
+                jButton3.setForeground(new java.awt.Color(122, 32, 64));
+                jButton3.setText("traverse");
+
+                jButton4.setBackground(new java.awt.Color(255, 240, 245));
+                jButton4.setFont(new java.awt.Font("Felix Titling", 1, 15)); // NOI18N
+                jButton4.setForeground(new java.awt.Color(122, 32, 64));
+                jButton4.setText("delete");
+
+                jTextArea1.setBackground(new java.awt.Color(255, 240, 245));
+                jTextArea1.setColumns(20);
+                jTextArea1.setRows(5);
+                jScrollPane1.setViewportView(jTextArea1);
+
+                jLabel2.setFont(new java.awt.Font("Felix Titling", 1, 12)); // NOI18N
+                jLabel2.setForeground(new java.awt.Color(122, 32, 64));
+                jLabel2.setText("ENTER ELEMENT:");
 
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
                 getContentPane().setLayout(layout);
                 layout.setHorizontalGroup(
                         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 400, Short.MAX_VALUE)
+                        .addGroup(layout.createSequentialGroup()
+                                .addGap(17, 17, 17)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(jTextField1)
+                                                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addGap(14, 14, 14))))
                 );
                 layout.setVerticalGroup(
                         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 300, Short.MAX_VALUE)
+                        .addGroup(layout.createSequentialGroup()
+                                .addGap(15, 15, 15)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(18, Short.MAX_VALUE))
                 );
 
                 pack();
@@ -66,5 +150,14 @@ public class CircularLinkedListForm extends javax.swing.JFrame {
         }
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
+        private javax.swing.JButton jButton1;
+        private javax.swing.JButton jButton2;
+        private javax.swing.JButton jButton3;
+        private javax.swing.JButton jButton4;
+        private javax.swing.JLabel jLabel1;
+        private javax.swing.JLabel jLabel2;
+        private javax.swing.JScrollPane jScrollPane1;
+        private javax.swing.JTextArea jTextArea1;
+        private javax.swing.JTextField jTextField1;
         // End of variables declaration//GEN-END:variables
 }
