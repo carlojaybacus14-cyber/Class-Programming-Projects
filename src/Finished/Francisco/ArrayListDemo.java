@@ -249,7 +249,7 @@ public class ArrayListDemo extends javax.swing.JFrame {
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         arrayList.clear();
-        txtContainer += "List cleared.";
+        txtContainer += "List cleared.\n";
         txtAreaResult.setText(txtContainer);
     }//GEN-LAST:event_btnClearActionPerformed
 
